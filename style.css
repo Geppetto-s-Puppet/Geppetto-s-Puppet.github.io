@@ -1,0 +1,168 @@
+/* ========================================
+   フォント設定
+   ======================================== */
+@font-face {
+    font-family: 'default-font';
+    src: url('default-font.ttf') format('truetype');
+}
+
+/* ========================================
+   全体の基本設定
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'default-font', monospace;
+    overflow-x: hidden; /* 横スクロールを防ぐ */
+}
+
+/* ========================================
+   トップセクション（左揃え）
+   ======================================== */
+#top-section {
+    /* セクションの高さ = 画面の高さ */
+    height: 100vh;
+    
+    /* 固定背景の設定 */
+    background-image: url('bg-1.gif');
+    background-size: 1920px 1080px; /* 画像のサイズ */
+    background-position: center center; /* 中央に配置 */
+    background-repeat: no-repeat; /* 繰り返さない */
+    background-attachment: fixed; /* 画面に固定（スクロールしても動かない） */
+    
+    /* コンテンツの配置 */
+    position: relative;
+}
+
+/* トップセクション内のコンテンツ */
+#top-section .content {
+    /* 左側に配置 */
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%); /* 縦方向の中央に */
+    
+    /* 文字の色（背景に合わせて調整してください） */
+    color: white;
+    text-align: left;
+    z-index: 10; /* 背景の上に表示 */
+}
+
+/* ========================================
+   タイムラインセクション（中央揃え）
+   ======================================== */
+#timeline-section {
+    /* セクションの高さ = 画像3枚分 */
+    min-height: 3240px; /* 1080px × 3枚 */
+    
+    /* コンテンツの配置 */
+    position: relative;
+}
+
+/* タイムラインの背景画像用の入れ物 */
+#timeline-section .timeline-bg {
+    /* 画面全体を覆う */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* 背景レイヤー */
+}
+
+/* タイムラインの背景画像（3枚） */
+#timeline-section .timeline-bg img {
+    /* 画像のサイズ */
+    width: 1920px;
+    height: 1080px;
+    
+    /* 画像を中央に配置 */
+    display: block;
+    margin: 0 auto;
+}
+
+/* タイムライン内のコンテンツ */
+#timeline-section .content {
+    /* 中央揃え */
+    position: relative;
+    z-index: 10; /* 背景の上に表示 */
+    text-align: center;
+    
+    /* 上下に余白を追加 */
+    padding: 100px 50px;
+    
+    /* 文字の色（背景に合わせて調整してください） */
+    color: white;
+}
+
+/* タイムラインの各項目 */
+.timeline-item {
+    margin: 200px 0; /* 各項目の間隔 */
+}
+
+/* ========================================
+   ギャラリーセクション（右揃え）
+   ======================================== */
+#gallery-section {
+    /* セクションの高さ = 画像5枚分 */
+    min-height: 5400px; /* 1080px × 5枚 */
+    
+    /* コンテンツの配置 */
+    position: relative;
+}
+
+/* ギャラリーの背景画像用の入れ物 */
+#gallery-section .gallery-bg {
+    /* 画面全体を覆う */
+    position: fixed; /* 画面に固定 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* 背景レイヤー */
+}
+
+/* ギャラリーの背景画像（5枚） */
+#gallery-section .gallery-bg img {
+    /* 画像のサイズ */
+    width: 1920px;
+    height: 1080px;
+    
+    /* 画像を中央に配置 */
+    display: block;
+    margin: 0 auto;
+}
+
+/* ギャラリー内のコンテンツ */
+#gallery-section .content {
+    /* 右側に配置 */
+    position: relative;
+    z-index: 10; /* 背景の上に表示 */
+    text-align: right;
+    
+    /* 上下に余白を追加 */
+    padding: 100px 50px;
+    
+    /* 文字の色（背景に合わせて調整してください） */
+    color: white;
+}
+
+/* ========================================
+   レスポンシブ対応（画面が小さい場合）
+   ======================================== */
+@media (max-width: 1920px) {
+    /* 背景画像を画面サイズに合わせる */
+    #top-section {
+        background-size: cover;
+    }
+    
+    #timeline-section .timeline-bg img,
+    #gallery-section .gallery-bg img {
+        width: 100%;
+        height: auto;
+    }
+}
