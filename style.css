@@ -28,7 +28,7 @@ body {
     height: 100vh;
     
     /* 固定背景の設定 */
-    background-image: url('bg-1.gif');
+    background-image: url('assets/B1.gif');
     background-size: 1920px 1080px; /* 画像のサイズ */
     background-position: center center; /* 中央に配置 */
     background-repeat: no-repeat; /* 繰り返さない */
