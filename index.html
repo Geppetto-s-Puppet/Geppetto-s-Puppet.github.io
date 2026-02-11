@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <audio id="BGM" src="assets/bgm.m4a" loop controls></audio>
+    <audio id="BGM" src="assets/bgm.m4a" loop></audio>
     <script>
       const bgm = document.getElementById('BGM'); bgm.volume = 0.1;
       window.addEventListener('click', () => { bgm.play(); }, { once: true });
