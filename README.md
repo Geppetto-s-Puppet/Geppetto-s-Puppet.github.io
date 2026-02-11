@@ -1,8 +1,8 @@
 🔗 [Visit Portfolio / ポートフォリオはこちら](https://geppetto-s-puppet.github.io)
 
-アレックスのポートフォリオサイトです。制作実績やスキルなどを掲載しています。
-
 This is Alex's portfolio site showcasing my projects and skills.  
+
+アレックスのポートフォリオサイトです。制作実績やスキルなどを掲載しています。
 
 ##
 
