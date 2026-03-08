@@ -1,12 +1,1 @@
-🔗 [Visit Portfolio / ポートフォリオはこちら](https://geppetto-s-puppet.github.io)
-
-This is Alex's portfolio site showcasing my projects and skills.  
-
-アレックスのポートフォリオサイトです。制作実績やスキルなどを掲載しています。
-
-##
-
-- GitHub：https://github.com/Geppetto-s-Puppet
-
-- Email：behindnan@gmail.com
-
+🔗 [Visit My Portfolio / 私のポートフォリオはこちら](https://geppetto-s-puppet.github.io)
