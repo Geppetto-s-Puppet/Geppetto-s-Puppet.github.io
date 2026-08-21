@@ -1,0 +1,146 @@
+/* ============================================================
+   base.css — リセット / 地の文 / 全画面オーバーレイ
+   ============================================================ */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+html{
+  font-size:20px;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+  background:var(--bg);
+}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+
+body{
+  font-family:var(--f);
+  font-size:var(--t-s);
+  line-height:1.9;
+  letter-spacing:.04em;
+  color:var(--ink);
+  background:var(--bg);
+  overflow-x:hidden;
+  -webkit-font-smoothing:none;
+  font-smooth:never;
+  text-rendering:geometricPrecision;
+  transition:background-color .45s var(--e-out),color .45s var(--e-out);
+}
+
+img,canvas{display:block;max-width:100%}
+canvas{image-rendering:pixelated}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit;background:none;border:0}
+button{cursor:pointer}
+ol,ul{list-style:none}
+h1,h2,h3,h4{font-family:var(--f-d);font-weight:400;line-height:1.35}
+small{font-size:var(--t-xs);color:var(--ink-2)}
+code{font-family:var(--f)}
+
+::selection{background:var(--pink);color:var(--paper)}
+
+/* カーソル：ドット絵の十字 */
+body{
+  cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' shape-rendering='crispEdges'%3E%3Cpath fill='%23ffffff' d='M9 0h6v9h9v6h-9v9H9v-9H0V9h9z'/%3E%3Cpath fill='%23000000' d='M11 2h2v9h9v2h-9v9h-2v-9H2v-2h9z'/%3E%3C/svg%3E") 12 12,crosshair;
+}
+a,button,.slot,input{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' shape-rendering='crispEdges'%3E%3Cpath fill='%23ffffff' d='M4 0h4v4h4v4h4v4h-4v4h-4v4H4z'/%3E%3Cpath fill='%23000000' d='M6 2h2v4h4v4h4v2h-4v4h-2v4H6z'/%3E%3C/svg%3E") 6 2,pointer}
+
+/* ══════════ レイアウト ══════════ */
+.wrap{width:min(100% - 48px,var(--wrap));margin-inline:auto}
+.wrap--narrow{width:min(100% - 48px,760px)}
+
+/* ══════════ セクション間のギザギザ ══════════ */
+.edge{
+  position:absolute;left:0;right:0;height:12px;
+  background:var(--sec-bg,var(--paper-2));
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='12' shape-rendering='crispEdges'%3E%3Cg fill='%23000'%3E%3Crect x='0' y='0' width='4' height='12'/%3E%3Crect x='4' y='4' width='4' height='8'/%3E%3Crect x='8' y='8' width='4' height='4'/%3E%3Crect x='12' y='8' width='4' height='4'/%3E%3Crect x='16' y='4' width='4' height='8'/%3E%3Crect x='20' y='0' width='4' height='12'/%3E%3Crect x='24' y='0' width='4' height='12'/%3E%3Crect x='28' y='4' width='4' height='8'/%3E%3C/g%3E%3C/svg%3E") repeat-x 0 0/32px 12px;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='12' shape-rendering='crispEdges'%3E%3Cg fill='%23000'%3E%3Crect x='0' y='0' width='4' height='12'/%3E%3Crect x='4' y='4' width='4' height='8'/%3E%3Crect x='8' y='8' width='4' height='4'/%3E%3Crect x='12' y='8' width='4' height='4'/%3E%3Crect x='16' y='4' width='4' height='8'/%3E%3Crect x='20' y='0' width='4' height='12'/%3E%3Crect x='24' y='0' width='4' height='12'/%3E%3Crect x='28' y='4' width='4' height='8'/%3E%3C/g%3E%3C/svg%3E") repeat-x 0 0/32px 12px;
+  z-index:3;pointer-events:none;
+}
+.edge--top{top:-12px}
+.edge--bottom{bottom:-12px;transform:scaleY(-1)}
+
+/* ══════════ 走査線・周辺減光 ══════════ */
+.overlay-scan{
+  position:fixed;inset:0;z-index:80;pointer-events:none;
+  background:repeating-linear-gradient(180deg,var(--scan) 0 2px,transparent 2px 4px);
+  mix-blend-mode:multiply;
+}
+[data-theme="night"] .overlay-scan{mix-blend-mode:normal}
+.overlay-vig{
+  position:fixed;inset:0;z-index:81;pointer-events:none;
+  background:radial-gradient(120% 90% at 50% 45%,transparent 45%,rgba(0,0,0,.13) 88%,rgba(0,0,0,.24) 100%);
+}
+
+/* ══════════ 花びら ══════════ */
+.petals{position:fixed;inset:0;z-index:70;pointer-events:none;overflow:hidden}
+.petal{
+  position:absolute;top:-16px;width:6px;height:6px;
+  background:var(--pink);
+  box-shadow:0 3px 0 var(--pink),3px -3px 0 var(--hi);
+  opacity:.7;
+  animation:fall linear infinite,sway ease-in-out infinite alternate;
+}
+.petal--w{background:var(--hi);box-shadow:0 3px 0 var(--hi)}
+@keyframes fall{ to{ transform:translateY(105vh) } }
+@keyframes sway{ from{ margin-left:-24px } to{ margin-left:24px } }
+@media (prefers-reduced-motion:reduce){ .petals{display:none} }
+
+/* ══════════ テーマ切替のディザ・ワイプ ══════════ */
+.wipe{
+  position:fixed;inset:0;z-index:95;pointer-events:none;opacity:0;
+  background:var(--paper);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cg fill='%23000'%3E%3Crect x='0' y='0' width='4' height='4'/%3E%3Crect x='4' y='4' width='4' height='4'/%3E%3C/g%3E%3C/svg%3E") repeat 0 0/8px 8px;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cg fill='%23000'%3E%3Crect x='0' y='0' width='4' height='4'/%3E%3Crect x='4' y='4' width='4' height='4'/%3E%3C/g%3E%3C/svg%3E") repeat 0 0/8px 8px;
+}
+.wipe.is-on{animation:wipe .5s steps(3,end) both}
+@keyframes wipe{ 0%{opacity:0} 40%{opacity:1} 100%{opacity:0} }
+
+/* ══════════ 出現アニメーション ══════════ */
+[data-rv]{opacity:0;transform:translateY(20px);will-change:opacity,transform}
+[data-rv].is-in{
+  opacity:1;transform:none;
+  transition:opacity .7s var(--e-out),transform .8s var(--e-out);
+  transition-delay:var(--rvd,0ms);
+}
+@media (prefers-reduced-motion:reduce){
+  [data-rv]{opacity:1;transform:none}
+}
+
+/* ══════════ ちりばめた自作の絵 ══════════ */
+.sticker{
+  position:absolute;z-index:1;pointer-events:none;
+  image-rendering:auto;opacity:.5;
+  filter:drop-shadow(4px 4px 0 var(--shade));
+}
+.sticker--seal{right:2%;top:56px;width:72px;opacity:.9;image-rendering:pixelated}
+.sticker--jurassic{right:0;bottom:40px;width:220px;transform:scaleX(-1)}
+.sticker--creeper{left:0;top:80px;width:150px}
+.sticker--flamingo{right:1%;top:40px;width:170px}
+@media (max-width:1240px){ .sticker--jurassic,.sticker--creeper{display:none} }
+@media (max-width:760px){ .sticker{display:none} }
+
+/* ══════════ ローディング ══════════ */
+.boot{
+  position:fixed;inset:0;z-index:100;
+  display:grid;place-items:center;
+  background:var(--paper-2);
+  transition:opacity .4s var(--e-out),visibility .4s;
+}
+.boot.is-done{opacity:0;visibility:hidden}
+.boot__inner{text-align:center;padding:24px}
+.boot__logo{
+  font-family:var(--f-d);font-size:var(--t-m);letter-spacing:.14em;
+  text-shadow:0 4px 0 var(--shade);
+  animation:blink 1.6s steps(2,end) infinite;
+}
+.boot__sub{color:var(--ink-2);margin-top:8px}
+.boot__bar{
+  width:min(320px,80vw);height:20px;margin:24px auto 12px;
+  background:var(--paper-3);
+  box-shadow:0 -4px 0 var(--line),0 4px 0 var(--line),-4px 0 0 var(--line),4px 0 0 var(--line);
+}
+.boot__bar i{display:block;height:100%;width:0;background:var(--accent);
+  background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.35) 0 4px,transparent 4px 12px);}
+.boot__tip{font-size:var(--t-xs);color:var(--ink-2);letter-spacing:.2em}
+@keyframes blink{50%{opacity:.55}}
