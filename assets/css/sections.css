@@ -44,8 +44,7 @@
 .facts__grid b i{font-style:normal;font-size:var(--t-xs);color:var(--paper)}
 .facts__grid span{font-size:var(--t-xs);opacity:.85;line-height:1.4}
 .facts__cta a{--ty:0px;display:flex;flex-direction:column;gap:2px;transform:translate3d(0,var(--ty),0)}
-.facts__cta b{color:var(--pink);display:flex;justify-content:center;align-items:center}
-.facts__cta .ico{width:1.5em;height:1em}
+.facts__cta b{color:var(--pink);display:flex;justify-content:center;align-items:center;min-height:1.1em}
 .facts__cta a:hover b{color:var(--sun)}
 
 /* ══════════ セクション共通 ══════════ */
@@ -160,6 +159,17 @@
   padding:2px 10px;font-size:var(--t-xs);letter-spacing:.06em;
   background:var(--ink);color:var(--paper);
 }
+/* BEFORE と AFTER を並べて、どっちがどっちか迷わせない */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ba__x{position:relative;min-width:0}
+.ba__x img{width:100%;height:auto;display:block;box-shadow:0 0 0 4px var(--line)}
+.ba__x figcaption{
+  position:absolute;left:0;top:0;
+  padding:2px 10px;font-size:var(--t-xs);letter-spacing:.08em;
+  background:var(--ink);color:var(--paper);
+}
+.ba__x:last-child figcaption{background:var(--accent)}
+
 .slide__shots{display:flex;gap:4px;margin-top:12px}
 .slide__shots button{
   flex:1;min-width:0;padding:0;line-height:0;opacity:.55;
@@ -338,13 +348,15 @@
 .hobby__card p{margin-top:10px;font-size:var(--t-xs);line-height:1.8;color:var(--ink)}
 
 /* 自作の絵 */
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;align-items:end}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;align-items:start}
 .gal{background:var(--paper);padding:12px;
   box-shadow:0 -4px 0 var(--line),0 4px 0 var(--line),-4px 0 0 var(--line),4px 0 0 var(--line),
              4px 8px 0 var(--shade),8px 4px 0 var(--shade)}
-.gal img{width:100%;height:auto;image-rendering:auto}
-.gal--s img{image-rendering:pixelated}
-.gal figcaption{margin-top:10px;text-align:center;font-size:var(--t-xs);color:var(--ink-2);letter-spacing:.08em}
+.gal img{width:100%;height:auto;image-rendering:auto;box-shadow:0 0 0 2px color-mix(in srgb,var(--line) 20%,transparent)}
+.gal figcaption{margin-top:12px;padding:0 4px 4px}
+.gal figcaption b{display:block;font-weight:400;color:var(--accent);letter-spacing:.04em}
+.gal figcaption span{display:block;margin-top:2px;font-size:var(--t-xs);color:var(--ink-2);line-height:1.7}
+.sec-lead--end{margin-top:28px;margin-bottom:0}
 
 /* ══════════ 06 CONTACT ══════════ */
 .avail{margin-bottom:36px}
@@ -369,7 +381,24 @@
 .postcard__stamp::after{content:"AIR";position:absolute;left:0;right:0;bottom:-22px;text-align:center;
   font-size:var(--t-xs);letter-spacing:.24em;color:var(--ink-2)}
 .postcard__lead{margin:12px 0 28px;line-height:2}
-.links{display:grid;grid-template-columns:repeat(2,1fr);gap:24px 28px;margin-bottom:16px}
+.links{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 28px;margin-bottom:24px}
+
+/* メールアドレスは、見えるところに置いてコピーもできるように */
+.mailaddr{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.mailaddr__t{font-size:var(--t-xs);letter-spacing:.04em;user-select:all}
+.mailaddr__c{
+  --ty:0px;--sd:6px;
+  padding:4px 12px;font-size:var(--t-xs);letter-spacing:.08em;
+  background:var(--paper);color:var(--accent);
+  transform:translate3d(0,var(--ty),0);
+  box-shadow:
+    0 -4px 0 0 var(--line),0 4px 0 0 var(--line),
+    -4px 0 0 0 var(--line),4px 0 0 0 var(--line),
+    calc(var(--sd) - 4px) var(--sd) 0 0 var(--line),
+    var(--sd) calc(var(--sd) - 4px) 0 0 var(--line);
+}
+.mailaddr__c:hover{background:var(--sun);color:var(--onlight)}
+.mailaddr__c.is-done{background:var(--grass);color:var(--paper)}
 .postcard__note{margin-top:28px;text-align:center;font-size:var(--t-xs);color:var(--ink-2);letter-spacing:.08em}
 
 /* ══════════ FOOTER ══════════ */
@@ -399,7 +428,7 @@
   .slide{grid-template-columns:minmax(0,46%) minmax(0,1fr);gap:22px}
   .inv{grid-template-columns:1fr}
   .inv__desc{position:sticky;bottom:24px;top:auto}
-  .gallery{grid-template-columns:repeat(3,1fr)}
+  .gallery{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:1000px){
   .status{grid-template-columns:1fr}
@@ -425,7 +454,9 @@
   .ticker{bottom:72px}
   .scrolldown{display:none}
   .hud--top{padding:10px 14px}
-  .hud-cta{display:none}
+  .hud-cta{padding:6px 10px}
+  .hud-cta span{display:none}   /* 狭い画面では封筒だけ残す */
+  .links{grid-template-columns:1fr}
   .brand__txt{font-size:var(--t-s)}
 
   /* 狭い画面では、ヒーローの文字をウィンドウに載せて確実に読めるようにする */
@@ -477,7 +508,8 @@
   .stn__shots{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px}
   .stn__shots img{height:72px;flex:none}
 
-  .gallery{grid-template-columns:repeat(2,1fr);gap:16px}
+  .gallery{grid-template-columns:1fr;gap:20px}
+  .ba{grid-template-columns:1fr}
   .links{grid-template-columns:1fr}
   .avail__l>div{flex-direction:column;gap:4px}
   .avail__l dt{width:auto}

@@ -440,14 +440,20 @@
       view.scrollLeft = 0;
     });
 
-    var shots = $('#itrShots'), main = $('#itrMain'), lab = $('#itrLabel');
-    if (shots && main) {
+    /* BEFORE のサムネを押せば左が、AFTER を押せば右が入れ替わる */
+    var shots = $('#itrShots'), before = $('#itrBefore'), after = $('#itrAfter');
+    if (shots && before && after) {
+      var mark = function () {
+        $$('button', shots).forEach(function (o) {
+          var t = o.dataset.lab === 'BEFORE' ? before : after;
+          o.classList.toggle('is-on', o.dataset.src === t.getAttribute('src'));
+        });
+      };
+      mark();
       $$('button', shots).forEach(function (b) {
-        if (b.dataset.src === main.getAttribute('src')) b.classList.add('is-on');
         b.addEventListener('click', function () {
-          main.src = b.dataset.src;
-          if (lab && b.dataset.lab) lab.textContent = b.dataset.lab;
-          $$('button', shots).forEach(function (o) { o.classList.toggle('is-on', o === b); });
+          (b.dataset.lab === 'BEFORE' ? before : after).src = b.dataset.src;
+          mark();
         });
       });
     }
@@ -489,7 +495,30 @@
     if (localStorage.getItem('gp-lang') === 'en') set('en');
   })();
 
-  /* ══════════ 15. TOP へ ══════════ */
+  /* ══════════ 15. メールアドレスのコピー ══════════ */
+  (function copyMail() {
+    var btn = $('#copyMail');
+    if (!btn) return;
+    var label = $('span', btn);
+    btn.addEventListener('click', function () {
+      var txt = btn.dataset.copy;
+      var done = function () {
+        var was = label.textContent;
+        btn.classList.add('is-done');
+        label.textContent = document.documentElement.lang === 'en' ? 'COPIED' : 'コピーしました';
+        setTimeout(function () { btn.classList.remove('is-done'); label.textContent = was; }, 1600);
+      };
+      if (navigator.clipboard) navigator.clipboard.writeText(txt).then(done, function () {});
+      else {
+        var ta = document.createElement('textarea');
+        ta.value = txt; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  })();
+
+  /* ══════════ 16. TOP へ ══════════ */
   $('#toTop').addEventListener('click', function () {
     scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
   });

@@ -13,14 +13,20 @@
 <meta property="og:image" content="assets/img/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
 
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
 <link rel="preload" href="assets/fonts/PixelMplus10-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/tokens.css">
-<link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="assets/css/components.css">
-<link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/tokens.css?v=5">
+<link rel="stylesheet" href="assets/css/base.css?v=5">
+<link rel="stylesheet" href="assets/css/components.css?v=5">
+<link rel="stylesheet" href="assets/css/sections.css?v=5">
 </head>
 
 <body>
+
+<a class="skip" href="#works" data-en="Skip to my work">作品まで飛ばす</a>
 
 <!-- ══════════════ BOOT ══════════════ -->
 <div class="boot" id="boot" role="status" aria-label="読み込み中">
@@ -58,8 +64,8 @@
   </nav>
 
   <div class="hud__right">
-    <button class="lang" id="langBtn" aria-label="Switch to English"><span class="lang__to-en"><svg class="flag" viewBox="0 0 12 8" shape-rendering="crispEdges"><rect width="12" height="8" fill="#f4f4f4"/><g fill="#c8102e"><rect y="0" width="12" height="1"/><rect y="2" width="12" height="1"/><rect y="4" width="12" height="1"/><rect y="6" width="12" height="1"/></g><rect width="5" height="4" fill="#0a3161"/><g fill="#fff"><rect x="1" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/></g><rect width="12" height="8" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/></svg>EN</span><span class="lang__to-ja"><svg class="flag" viewBox="0 0 12 8" shape-rendering="crispEdges"><rect width="12" height="8" fill="#f4f4f4"/><g fill="#bc002d"><rect x="5" y="1" width="2" height="1"/><rect x="4" y="2" width="4" height="1"/><rect x="4" y="3" width="4" height="1"/><rect x="4" y="4" width="4" height="1"/><rect x="5" y="5" width="2" height="1"/></g><rect width="12" height="8" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/></svg>JA</span></button>
-    <a class="hud-cta" href="#contact" data-tw="press"><i class="ico" aria-hidden="true"><svg viewBox="0 0 12 8" shape-rendering="crispEdges"><g fill="currentColor"><rect x="0" y="0" width="12" height="1"/><rect x="0" y="7" width="12" height="1"/><rect x="0" y="1" width="1" height="6"/><rect x="11" y="1" width="1" height="6"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="4" width="4" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/></g></svg></i><span data-en="HIRE ME">連絡する</span></a>
+    <button class="lang" id="langBtn" aria-label="Switch to English"><span class="lang__to-en"><svg class="flag" width="30" height="20" viewBox="0 0 12 8" shape-rendering="crispEdges"><rect width="12" height="8" fill="#f4f4f4"/><g fill="#c8102e"><rect y="0" width="12" height="1"/><rect y="2" width="12" height="1"/><rect y="4" width="12" height="1"/><rect y="6" width="12" height="1"/></g><rect width="5" height="4" fill="#0a3161"/><g fill="#fff"><rect x="1" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/></g><rect width="12" height="8" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/></svg>EN</span><span class="lang__to-ja"><svg class="flag" width="30" height="20" viewBox="0 0 12 8" shape-rendering="crispEdges"><rect width="12" height="8" fill="#f4f4f4"/><g fill="#bc002d"><rect x="5" y="1" width="2" height="1"/><rect x="4" y="2" width="4" height="1"/><rect x="4" y="3" width="4" height="1"/><rect x="4" y="4" width="4" height="1"/><rect x="5" y="5" width="2" height="1"/></g><rect width="12" height="8" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/></svg>JA</span></button>
+    <a class="hud-cta" href="#contact" data-tw="press"><i class="ico" aria-hidden="true"><svg width="30" height="20" viewBox="0 0 12 8" shape-rendering="crispEdges"><g fill="currentColor"><rect x="0" y="0" width="12" height="1"/><rect x="0" y="7" width="12" height="1"/><rect x="0" y="1" width="1" height="6"/><rect x="11" y="1" width="1" height="6"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="4" width="4" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/></g></svg></i><span data-en="HIRE ME">連絡する</span></a>
     <button class="menu-btn" id="menuBtn" aria-label="メニュー" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -121,7 +127,7 @@
 
     <div class="hero__cta" data-rv data-rv-d="260">
       <a href="#works" class="btn btn--primary" data-tw="press"><span data-en="▶ SEE MY WORKS">▶ WORKS をみる</span></a>
-      <a href="#contact" class="btn btn--ico" data-tw="press"><i class="ico" aria-hidden="true"><svg viewBox="0 0 12 8" shape-rendering="crispEdges"><g fill="currentColor"><rect x="0" y="0" width="12" height="1"/><rect x="0" y="7" width="12" height="1"/><rect x="0" y="1" width="1" height="6"/><rect x="11" y="1" width="1" height="6"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="4" width="4" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/></g></svg></i><span data-en="CONTACT">CONTACT</span></a>
+      <a href="#contact" class="btn btn--ico" data-tw="press"><i class="ico" aria-hidden="true"><svg width="30" height="20" viewBox="0 0 12 8" shape-rendering="crispEdges"><g fill="currentColor"><rect x="0" y="0" width="12" height="1"/><rect x="0" y="7" width="12" height="1"/><rect x="0" y="1" width="1" height="6"/><rect x="11" y="1" width="1" height="6"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="4" width="4" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/></g></svg></i><span data-en="CONTACT">CONTACT</span></a>
     </div>
   </div>
 
@@ -131,7 +137,7 @@
   </a>
 
   <div class="ticker" aria-hidden="true">
-    <div class="ticker__in" id="tickerIn"><span class="ticker__unit">★ どくがくプログラマー SELF-TAUGHT PROGRAMMER ★ 低レイヤのことも知りたい REVERSE ENGINEERING ★ GMODシェーダーライブラリ公式JPフォーラムかんりにん GShaders MODERATOR ★ こじんじぎょうぬし METAL GARDEN FOUNDER ★ ばいくのり YZF-R25 RIDER ★ 足関節をれんしゅうしたい WEEKEND MMA FIGHTER ★ </span></div>
+    <div class="ticker__in" id="tickerIn"><span class="ticker__unit">★ どくがくプログラマー SELF-TAUGHT PROGRAMMER ★ 低レイヤのことも知りたい REVERSE ENGINEERING ★ GMODシェーダーライブラリ公式JPフォーラムかんりにん GShaders MODERATOR ★ こじんじぎょうぬし METAL GARDEN FOUNDER ★ ばいくのり YZF-R25 RIDER ★ 足関節をれんしゅうしたい WEEKEND MMA FIGHTER &nbsp;&nbsp;&nbsp;</span></div>
   </div>
 </section>
 
@@ -139,12 +145,12 @@
 <section class="facts" aria-label="要点">
   <div class="wrap">
     <ul class="facts__grid">
-      <li><b data-age>22</b><span data-en="years old / Kumamoto">歳・熊本市</span></li>
+      <li><b><span data-age>22</span>歳</b><span data-en="Kumamoto, JP">熊本市</span></li>
       <li><b>15年</b><span data-en="running servers">サーバー運営</span></li>
       <li><b id="repoCount">22</b><span data-en="public repositories">公開リポジトリ</span></li>
       <li><b>200k</b><span data-en="views on commentary">実況の再生数</span></li>
       <li><b>JP/EN/RO</b><span data-en="languages spoken">話せる言語</span></li>
-      <li class="facts__cta"><a href="#contact" data-tw="press"><b><i class="ico" aria-hidden="true"><svg viewBox="0 0 12 8" shape-rendering="crispEdges"><g fill="currentColor"><rect x="0" y="0" width="12" height="1"/><rect x="0" y="7" width="12" height="1"/><rect x="0" y="1" width="1" height="6"/><rect x="11" y="1" width="1" height="6"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="4" width="4" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/></g></svg></i></b><span data-en="contact me">連絡する</span></a></li>
+      <li class="facts__cta"><a href="#contact" data-tw="press"><b><i class="ico" aria-hidden="true"><svg width="30" height="20" viewBox="0 0 12 8" shape-rendering="crispEdges"><g fill="currentColor"><rect x="0" y="0" width="12" height="1"/><rect x="0" y="7" width="12" height="1"/><rect x="0" y="1" width="1" height="6"/><rect x="11" y="1" width="1" height="6"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="4" width="4" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/></g></svg></i></b><span data-en="contact me">連絡する</span></a></li>
     </ul>
   </div>
 </section>
@@ -180,7 +186,7 @@
           <div><dt>CALL</dt><dd data-en="ALEX">アレク</dd></div>
           <div><dt>AGE</dt><dd><span data-age>22</span></dd></div>
           <div><dt>BASE</dt><dd data-en="Chuo-ku, Kumamoto (2 years in Hakata, Fukuoka)">熊本市中央区 <small>／ 2年間は博多に在住</small></dd></div>
-          <div><dt>STUDY</dt><dd data-en="The Open University of Japan — Information Course">放送大学 教養学部 情報コース</dd></div>
+          <div><dt>STUDY</dt><dd data-en="The Open University of Japan — Information Course (distance learning, so working alongside it is no problem)">放送大学 教養学部 情報コース <small>／ 通信なので就業と両立できます</small></dd></div>
           <div><dt>WORK</dt><dd data-en="METAL GARDEN — contract development and English tutoring">個人事業「METAL GARDEN」 <small>／ 受託開発と英語講師</small></dd></div>
           <div><dt>LANG</dt><dd data-en="Japanese (native) / English / Romanian — Russian &amp; Chinese in progress">日本語 ／ 英語 ／ ルーマニア語 <small>／ ロシア語・中国語は勉強中</small></dd></div>
           <div><dt>LICENSE</dt><dd data-en="Semi-medium truck / Motorcycle / EIKEN Grade Pre-1">準中型自動車 ／ 普通自動二輪 ／ 英検準一級</dd></div>
@@ -199,8 +205,8 @@
     <div class="talk frame" data-rv data-rv-d="150">
       <span class="talk__face" aria-hidden="true">◆</span>
       <p class="talk__txt" id="talkTxt"
-         data-lines="幼少期より、独学でプログラミングに没頭してきました。|既存システムのリバースエンジニアリングやMOD開発が好きで、ゲームサーバーの構築・運営・広報を10年以上しています。|いまは放送大学の情報コースに入り直しながら、METAL GARDEN という屋号で個人事業をやっています。|これからはチーム規模での課題解決に挑み、低レイヤからモダンな技術まで幅広く学びたい。|ゆくゆくは、広い視野と専門性を両立させた「T字型のプレイヤー」になりたいです。"
-         data-lines-en="I have been teaching myself programming since I was a child.|I love reverse engineering existing systems and building mods, and I have been running game servers — building, operating and promoting them — for over ten years.|I am now studying Information Science at The Open University of Japan while running my own business, METAL GARDEN.|Next I want to solve problems at team scale, and learn broadly from the low level up to modern stacks.|My goal is to become a T-shaped player: wide view, real depth."></p>
+         data-lines="幼少期より、独学でプログラミングに没頭してきました。|既存システムのリバースエンジニアリングやMOD開発が好きで、ゲームサーバーの構築・運営・広報を10年以上しています。|専門学校の一年目は、東京の歌舞伎町と百人町に一ヶ月だけ住んでいました。西成の炊き出しに行ったこともあります。|今年の3月には六本木のAI自動化企業から内定をいただきましたが、辞退して放送大学に入り直しました。もう少し土台から学びたかったからです。|いまは METAL GARDEN という屋号で、受託開発とオンライン英語講師をしています。|これからはチーム規模での課題解決に挑み、低レイヤからモダンな技術まで幅広く学びたい。|ゆくゆくは、広い視野と専門性を両立させた「T字型のプレイヤー」になりたいです。"
+         data-lines-en="I have been teaching myself programming since I was a child.|I love reverse engineering existing systems and building mods, and I have been running game servers — building, operating and promoting them — for over ten years.|In my first year at college I lived in Kabukicho and Hyakunincho in Tokyo for a month. I have also helped at a soup kitchen in Nishinari, Osaka.|In March this year I received an offer from an AI automation company in Roppongi. I declined it and went back to university instead, because I wanted a firmer foundation first.|I now run my own business, METAL GARDEN: contract development and online English tutoring.|Next I want to solve problems at team scale, and learn broadly from the low level up to modern stacks.|My goal is to become a T-shaped player: wide view, real depth."></p>
       <span class="talk__next" id="talkNext">▼</span>
     </div>
 
@@ -227,21 +233,29 @@
 
           <article class="slide">
             <div class="slide__art">
-              <img id="itrMain" src="assets/img/works/itr-after-1.jpg" alt="Into the Reality を適用した Garry's Mod の画面">
-              <span class="slide__badge" id="itrLabel">AFTER</span>
+              <div class="ba">
+                <figure class="ba__x">
+                  <img id="itrBefore" src="assets/img/works/itr-before-1.jpg" alt="Into the Reality を入れる前の Garry's Mod の画面">
+                  <figcaption>BEFORE</figcaption>
+                </figure>
+                <figure class="ba__x">
+                  <img id="itrAfter" src="assets/img/works/itr-after-3.jpg" alt="Into the Reality を入れた後の Garry's Mod の画面">
+                  <figcaption>AFTER</figcaption>
+                </figure>
+              </div>
               <div class="slide__shots" id="itrShots">
-                <button type="button" data-src="assets/img/works/itr-before-1.jpg" data-lab="BEFORE"><img src="assets/img/works/itr-before-1.jpg" alt="適用前の画面 1"></button>
-                <button type="button" data-src="assets/img/works/itr-before-2.jpg" data-lab="BEFORE"><img src="assets/img/works/itr-before-2.jpg" alt="適用前の画面 2"></button>
-                <button type="button" data-src="assets/img/works/itr-after-1.jpg" data-lab="AFTER"><img src="assets/img/works/itr-after-1.jpg" alt="適用後の画面 1"></button>
-                <button type="button" data-src="assets/img/works/itr-after-2.jpg" data-lab="AFTER"><img src="assets/img/works/itr-after-2.jpg" alt="適用後の画面 2"></button>
-                <button type="button" data-src="assets/img/works/itr-after-3.jpg" data-lab="AFTER"><img src="assets/img/works/itr-after-3.jpg" alt="適用後の画面 3"></button>
+                <button type="button" data-src="assets/img/works/itr-before-1.jpg" data-lab="BEFORE"><img src="assets/img/works/itr-before-1.jpg" alt="適用前 1"></button>
+                <button type="button" data-src="assets/img/works/itr-before-2.jpg" data-lab="BEFORE"><img src="assets/img/works/itr-before-2.jpg" alt="適用前 2"></button>
+                <button type="button" data-src="assets/img/works/itr-after-1.jpg" data-lab="AFTER"><img src="assets/img/works/itr-after-1.jpg" alt="適用後 1"></button>
+                <button type="button" data-src="assets/img/works/itr-after-2.jpg" data-lab="AFTER"><img src="assets/img/works/itr-after-2.jpg" alt="適用後 2"></button>
+                <button type="button" data-src="assets/img/works/itr-after-3.jpg" data-lab="AFTER"><img src="assets/img/works/itr-after-3.jpg" alt="適用後 3"></button>
               </div>
             </div>
             <div class="slide__body">
               <h3 class="slide__t">Into the Reality</h3>
               <p class="slide__jp" data-en="All-in-one photorealism pack for Garry's Mod">Garry's Mod 用オールインワン写実化パック</p>
               <p class="slide__metrics">
-                <b data-en="Released on Steam Workshop">Steam Workshop 公開</b>
+                <b data-en="100+ likes on the Steam Workshop">Workshop で100いいね超</b>
                 <b data-en="Appointed JP forum admin">JPフォーラム管理人に任命</b>
               </p>
               <p class="slide__d" data-en="Pushes a 2006 game toward the look of Unrecord or BodyCam. I ported ReShade .fx to .hlsl, compiled it to ps20b.vcs, and bundled CAS + Curved Levels post-processing with noise-based hand shake, weapon sway and realistic fall damage. After releasing it on the Workshop I got in touch with the author of GShader Library, and was appointed admin of the Japanese forum of the Garry's Mod shader community.">
@@ -473,7 +487,7 @@
         <button class="slot" data-g="◆" data-n="C++" data-lv="A" data-d="プロセスIDを指定して仮想アドレスを上書きするメモリハックや、MinGW / GLFW での簡易レンダリング。DX12 で PBR の 3D モデルを描画するのが次の目標。" data-d-en="Memory hacks that overwrite virtual addresses by process ID, and simple rendering with MinGW / GLFW. Drawing PBR 3D models in DX12 is my next goal."></button>
         <button class="slot" data-g="▲" data-n="HLSL" data-lv="A" data-d="ReShade の .fx を .hlsl に起こし、ps20b.vcs へコンパイルして Workshop に公開。SSGI では論文の Visibility Bitmask をそのまま実装した。" data-d-en="Ported ReShade .fx to .hlsl, compiled to ps20b.vcs and published on the Workshop. For SSGI I implemented the Visibility Bitmask paper directly."></button>
         <button class="slot" data-g="★" data-n="Lua / GLua" data-lv="A" data-d="Garry's Mod でバイナリモジュールから HLSL までを学んだ場所。GShader Library 公式 JP フォーラムの管理者を任されています。" data-d-en="Garry's Mod is where I learned everything from binary modules to HLSL. I am the admin of the official Japanese forum for GShader Library."></button>
-        <button class="slot" data-g="●" data-n="C#" data-lv="B" data-d="unityroom で論理素子をつなげて遊ぶ 2D ゲームを公開。ノイズ関数で小規模なマインクラフトも再現。BepInEx + Harmony での注入もこれ。" data-d-en="Released a 2D game about wiring logic gates on unityroom, and rebuilt a small Minecraft with noise functions. Also my language for BepInEx + Harmony injection."></button>
+        <button class="slot" data-g="●" data-n="C#" data-lv="B" data-d="unityroom で論理素子をつなげて遊ぶ 2D ゲーム「Lagrantica」を公開。ノイズ関数で小規模なマインクラフトも再現。BepInEx + Harmony での注入もこれ。" data-d-en="Released a 2D game about wiring logic gates on unityroom, and rebuilt a small Minecraft with noise functions. Also my language for BepInEx + Harmony injection."></button>
         <button class="slot" data-g="■" data-n="Java" data-lv="B" data-d="Minecraft の Mixin と Paper プラグイン。SKULL-26.2 ではナビゲーションと AI を自前で書き直しました。" data-d-en="Minecraft Mixins and Paper plugins. In SKULL-26.2 I rewrote navigation and AI from scratch."></button>
         <button class="slot" data-g="§" data-n="Python" data-lv="B" data-d="最初は Discord の自鯖向け音楽 BOT。Tkinter で管理用 GUI まで作りました。いまはローカル LLM、動画の自動編集、スクレイピングまで雑食。kappalogic は PyPI 公開済み。" data-d-en="Started with a music bot for my own Discord server, with a Tkinter admin GUI. Now: local LLMs, video auto-editing, scraping. kappalogic is on PyPI."></button>
         <button class="slot" data-g="†" data-n="TypeScript" data-lv="C" data-d="統合版マイクラで触ったのが契機。React / Next.js でシフト表アプリを作りました。" data-d-en="Bedrock Minecraft scripting got me started. I built a shift-table app with React / Next.js."></button>
@@ -483,7 +497,7 @@
         <button class="slot" data-g="♪" data-n="Docker" data-lv="B" data-d="Dev Containers と併用して友人の PC 環境を再現。宿題のサポートや Toloka のスクレイピング案件でも。" data-d-en="With Dev Containers, to reproduce a friend's machine. Also used it for homework support and a Toloka scraping job."></button>
         <button class="slot" data-g="♭" data-n="Git / GitHub" data-lv="B" data-d="CS50 への課題提出を通じて基本的な流れを把握。普段はサーバーフォルダ単位の作業が多め。" data-d-en="Learned the basic flow through submitting CS50 assignments. Day to day I mostly work at the server-folder level."></button>
         <button class="slot" data-g="◇" data-n="OBS / 配信" data-n-en="OBS / Streaming" data-lv="B" data-d="サンプリング周波数・量子化ビット数・エンコードまわりの知識も。炎上や暴露に頼らず、ゲーム実況で20万再生を超えました。" data-d-en="Comfortable with sample rates, bit depth and encoding. Passed 200k views on game commentary without relying on drama or clickbait."></button>
-        <button class="slot" data-g="±" data-n="数学・物理" data-n-en="Math / Physics" data-lv="B" data-d="ミシシッピ大学の准教授から解析力学と微分位相幾何を教わっていました。古典力学から弦理論までのロードマップを自分で組んでいます。" data-d-en="I was taught analytical mechanics and differential topology by an associate professor at the University of Mississippi. I keep my own roadmap from classical mechanics to string theory."></button>
+        <button class="slot" data-g="±" data-n="数学・物理" data-n-en="Math / Physics" data-lv="B" data-d="ミシシッピ大学の下山ひろ准教授から、解析力学と微分位相幾何を教わっていました。古典力学から弦理論までのロードマップを自分で組んでいます。" data-d-en="I was taught analytical mechanics and differential topology by Associate Professor Hiro Shimoyama at the University of Mississippi. I keep my own roadmap from classical mechanics to string theory."></button>
         <button class="slot" data-g="‡" data-n="English" data-lv="B" data-d="高1で英検準一級。県代表の派遣学生としてモンタナ大学の ELI プログラムを修了。多国籍な環境で全編英語の議論を経験しました。" data-d-en="EIKEN Grade Pre-1 in my first year of high school. Completed the University of Montana ELI program as a prefectural delegate, debating entirely in English in a multinational group."></button>
         <button class="slot" data-g="▽" data-n="Blender" data-lv="C" data-d="モデリングも一通り。HTML / CSS / JavaScript のフロントエンドもここに含めています。" data-d-en="General modelling. I also count HTML / CSS / JavaScript front-end work here."></button>
       </div>
@@ -520,6 +534,7 @@
         <tr><th>2023.04</th><td data-en="Entered Human Academy Fukuoka, Game Planner Course">総合学園ヒューマンアカデミー福岡校 ゲームプランナー専攻 入学</td></tr>
         <tr><th>2024.03</th><td data-en="Withdrew, to find somewhere I could go deeper">同校 中退 <small>／ より深く学べる環境を目指して</small></td></tr>
         <tr class="is-now"><th>2026.04</th><td data-en="Entered The Open University of Japan — Faculty of Liberal Arts, Information Course (currently enrolled)">放送大学 教養学部 教養学科 情報コース 入学 <small>／ 在学中</small></td></tr>
+        <tr class="is-now"><th>2026</th><td data-en="Currently taking the LLM course run by the Matsuo Lab community at the University of Tokyo — [S3] Matsuo Lab LLM Community. Certificate pending.">東京大学 松尾研 LLM 講座 受講中 <small>／「[S3] 松尾研 LLM Community」所属。まもなく修了証</small></td></tr>
       </tbody></table>
     </div>
 
@@ -530,7 +545,7 @@
         <tr><th>2024.06<br>—2025.03</th><td data-en="Kyoritsu Maintenance Co., Ltd. — student dormitory staff, meal service support (part-time). Negotiated the role directly with the dorm manager. Left at the end of contract.">共立メンテナンス株式会社 学生寮スタッフ（寮食補助・パート）<small>／ 寮長に直接交渉して着任。契約期間満了により退職</small></td></tr>
         <tr><th data-en="2025.09—now">2025.09<br>—現在</th><td data-en="Bartender in Shimotori, Kumamoto (part-time)">熊本市下通にてバーテンダー（アルバイト）</td></tr>
         <tr><th>2026</th><td data-en="METAL GARDEN — sole proprietorship. Contract development and online English tutoring. Under a business contract with asonova Inc. (an AEON Fantasy company). Separate business account, business plan approved.">個人事業「METAL GARDEN」開業 <small>／ 受託開発とオンライン英語講師。株式会社 asonova（イオンファンタジー傘下）と業務委託契約。事業用口座を分け、事業計画書も通っています</small></td></tr>
-        <tr class="is-now"><th>2026</th><td data-en="Received a job offer from an AI automation company in Roppongi, Tokyo">六本木の AI 自動化企業より内定</td></tr>
+        <tr><th>2026.03</th><td data-en="Received an offer from an AI automation company in Roppongi, Tokyo — declined it, and chose to go back to studying instead">六本木の AI 自動化企業より内定 <small>／ 辞退し、学び直すことを選びました</small></td></tr>
       </tbody></table>
     </div>
 
@@ -541,14 +556,6 @@
         <tr><th>2021.08</th><td data-en="University of Montana — English Language Institute, Certificate of Completion (selected as a prefectural delegate)">モンタナ大学 English Language Institute 修了 <small>／ 県代表の派遣学生として選抜</small></td></tr>
         <tr><th>2025.07</th><td data-en="Semi-medium motor vehicle licence">準中型自動車免許</td></tr>
         <tr><th>2025.09</th><td data-en="Ordinary motorcycle licence">普通自動二輪免許</td></tr>
-      </tbody></table>
-    </div>
-
-    <div class="cv" data-rv data-rv-d="200">
-      <h3 class="cv__h" data-en="ELSEWHERE">そのほか</h3>
-      <table class="cv__t"><tbody>
-        <tr><th data-en="1st year at college">専門1年</th><td data-en="Lived in Kabukicho / Hyakunincho, Tokyo for one month">東京・歌舞伎町／百人町に1ヶ月間だけ住んでいました</td></tr>
-        <tr><th>—</th><td data-en="Volunteered at a soup kitchen for people sleeping rough in Nishinari, Osaka">大阪・西成のホームレス炊き出しに参加</td></tr>
       </tbody></table>
     </div>
 
@@ -696,41 +703,52 @@
 
     </ol>
 
-    <!-- ══════ 趣味 ══════ -->
+    <!-- ══════ ギャラリー ══════ -->
     <div class="art-head" data-rv>
-      <h3>OFF HOURS</h3>
-      <span class="sec-jp" data-en="what I do when I am not at a keyboard">キーボードから離れているとき</span>
+      <h3>GALLERY</h3>
+      <span class="sec-jp" data-en="drawings, things I own, places I ride">描いたもの・持ちもの・行った場所</span>
       <span class="sec-rule"></span>
     </div>
-    <div class="hobby" data-rv data-rv-d="60">
-      <div class="hobby__card frame">
-        <h4 data-en="BJJ / MMA">BJJ ／ MMA</h4>
-        <p data-en="I train Brazilian jiu-jitsu, mostly toward MMA. Right now I want to build out my leg locks — the SAMBO side of the game. My CQC repository came out of the same interest: rebuilding a technique system from public military manuals and peer-reviewed papers.">
-          ブラジリアン柔術を、主に MMA 寄りでやっています。いま鍛えたいのは足関節——サンボ側の技術です。
-          リポジトリの「CQC」も同じ興味から生まれました。軍の教範と査読論文から技術体系を組み直したものです。
-        </p>
-      </div>
-      <div class="hobby__card frame">
-        <h4 data-en="YZF-R25">バイク ／ YZF-R25</h4>
-        <p data-en="A matte black Yamaha YZF-R25. I got the motorcycle licence and the semi-medium truck licence, so I can move myself and my gear.">
-          ヤマハ YZF-R25、マットブラック。普通自動二輪と準中型を取ったので、自分も荷物も自分で運べます。
-        </p>
-      </div>
-      <div class="hobby__card frame">
-        <h4 data-en="Games, seriously">ゲーム、まじめに</h4>
-        <p data-en="Not just playing — taking apart what decides a match. That habit is the direct ancestor of everything in the WORKS section.">
-          遊ぶだけでなく、何が勝敗を分けるかを分解するほう。この癖が、WORKS に並んでいるもの全部の親です。
-        </p>
-      </div>
+    <p class="sec-lead" data-rv data-en="On days off I draw, ride, or train BJJ — mostly toward MMA. Right now I want to build out my leg locks, the SAMBO side of the game. The CQC repository came out of the same interest.">
+      休みの日は、絵を描くか、バイクに乗るか、BJJ（主に MMA 寄り）の練習をしています。
+      いま鍛えたいのは足関節——サンボ側の技術です。リポジトリの「CQC」も同じ興味から生まれました。
+    </p>
+
+    <div class="gallery" data-rv data-rv-d="60">
+      <figure class="gal gal--w">
+        <img src="assets/img/gallery/birthday-art.jpg" alt="ふたりの人物とハートを描いたイラスト">
+        <figcaption>
+          <b data-en="Drawn for my partner's birthday">彼女の誕生日に描いた絵</b>
+          <span data-en="We have been together for two years.">2年つきあっています。</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gal gal--w">
+        <img src="assets/img/gallery/plushies.jpg" alt="クリーパーやゾンビのぬいぐるみ、フィギュアや漫画が並んだ棚">
+        <figcaption>
+          <b data-en="The shelf at home">家にあるぬいぐるみたち</b>
+          <span data-en="Minecraft has been next to me for fifteen years, in one form or another.">Minecraft とは、かたちを変えて15年つきあっています。</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gal gal--w">
+        <img src="assets/img/gallery/r25-1.jpg" alt="港に停めたマットブラックの YZF-R25">
+        <figcaption>
+          <b data-en="YZF-R25, matte black">YZF-R25 マットブラック</b>
+          <span data-en="Motorcycle licence and a semi-medium truck licence, so I can move myself and my gear.">普通自動二輪と準中型を持っているので、自分も荷物も自分で運べます。</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gal gal--w">
+        <img src="assets/img/gallery/r25-2.jpg" alt="海辺に停めたバイクと、手前に写る手">
+        <figcaption>
+          <b data-en="Somewhere by the sea">海のちかくのどこか</b>
+          <span data-en="Kumamoto is a good place to ride.">熊本は、走るのにいい場所です。</span>
+        </figcaption>
+      </figure>
     </div>
 
-    <!-- ══════ 自作の絵 ══════ -->
-    <div class="art-head" data-rv>
-      <h3>ART</h3>
-      <span class="sec-jp" data-en="coming soon">じゅんびちゅう</span>
-      <span class="sec-rule"></span>
-    </div>
-    <p class="sec-lead" data-rv data-en="Coming soon.">じゅんびちゅうです。</p>
+    <p class="sec-lead sec-lead--end" data-rv data-en="More to come — the dojo, for one.">道場の写真とかも、そのうち載せます。</p>
 
   </div>
 </section>
@@ -751,8 +769,9 @@
     <div class="avail frame" data-rv>
       <h3 class="avail__h" data-en="AVAILABILITY">いまの稼働</h3>
       <dl class="avail__l">
+        <div><dt data-en="Start date">入社時期</dt><dd data-en="About one month, to hand over my current work. Sooner is better for me — I am actively looking, so please reach out early if you want to pull me in.">現業務の引き継ぎに1ヶ月ほど。早いほうがありがたいです。<br>就職は積極的にやりたいので、早めに引き抜いてくださる方、絶賛募集中です。</dd></div>
         <div><dt data-en="Weekly">週の予定</dt><dd data-en="Mon / Wed / Fri 18:00–22:00 — MMA training (movable if needed)|Tue / Thu / Sat 17:00–21:00 — online English lessons|Everything else is fully available">月・水・金 18:00〜22:00 ｜ MMA の練習（必要なら動かせます）<br>火・木・土 17:00〜21:00 ｜ オンライン英語講師<br>それ以外はフルコミットできます</dd></div>
-        <div><dt data-en="Location">勤務地</dt><dd data-en="Based in Kumamoto. Able to relocate at short notice — I would appreciate it if living together with my partner is acceptable.">熊本市。急な引っ越しも可能です。<small>／ パートナーと同居できるとありがたいです</small></dd></div>
+        <div><dt data-en="Location">勤務地</dt><dd data-en="Based in Kumamoto (born and still living in Chuo-ku). Able to relocate — living together with my partner is a requirement.">熊本市中央区（出身かつ現住所）。引っ越しは可能です。<br><small>／ パートナーとの同居が条件になります</small></dd></div>
         <div><dt data-en="Interested in">興味のある先</dt><dd data-en="Graphics, GPU / low-level runtimes, developer tooling, AI infrastructure. Internships at companies like NVIDIA, Anthropic or Valve are what I am aiming at.">グラフィックス、GPU・低レイヤ、開発者向けツール、AI 基盤。<br>NVIDIA・Anthropic・Valve のようなところのインターンを狙っています。</dd></div>
         <div><dt data-en="Reply">返信</dt><dd data-en="Japanese or English, usually within a day.">日本語でも英語でも、だいたい一日以内に返します。</dd></div>
       </dl>
@@ -766,13 +785,16 @@
         選考・インターン・共同開発・「これ作りませんか」——<br>
         なんでもどうぞ。
       </p>
-      <!-- ⟨EDIT⟩ メールアドレスと X のリンクを入れてください -->
+      <!-- ⟨EDIT⟩ RESUME のリンクだけ未設定です -->
       <div class="links">
-        <a class="btn btn--wide btn--ico" href="#" title="⟨EDIT⟩ mailto: を入れる" data-tw="press"><i class="ico" aria-hidden="true"><svg viewBox="0 0 12 8" shape-rendering="crispEdges"><g fill="currentColor"><rect x="0" y="0" width="12" height="1"/><rect x="0" y="7" width="12" height="1"/><rect x="0" y="1" width="1" height="6"/><rect x="11" y="1" width="1" height="6"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="4" width="4" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/></g></svg></i><span>MAIL</span></a>
+        <a class="btn btn--wide btn--ico" href="mailto:403areku@gmail.com?subject=%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA%E3%82%92%E8%A6%8B%E3%81%A6%E3%81%94%E9%80%A3%E7%B5%A1" data-tw="press"><i class="ico" aria-hidden="true"><svg width="30" height="20" viewBox="0 0 12 8" shape-rendering="crispEdges"><g fill="currentColor"><rect x="0" y="0" width="12" height="1"/><rect x="0" y="7" width="12" height="1"/><rect x="0" y="1" width="1" height="6"/><rect x="11" y="1" width="1" height="6"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="4" width="4" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/></g></svg></i><span>MAIL</span></a>
         <a class="btn btn--wide" href="https://github.com/Geppetto-s-Puppet" target="_blank" rel="noopener" data-tw="press"><span>◆ GITHUB</span></a>
-        <a class="btn btn--wide" href="#" title="⟨EDIT⟩ X の URL を入れる" data-tw="press"><span>★ X</span></a>
         <a class="btn btn--wide" href="#" title="⟨EDIT⟩ 履歴書 / 職務経歴書へのリンク" data-tw="press"><span>§ RESUME</span></a>
       </div>
+      <p class="mailaddr">
+        <i class="ico" aria-hidden="true"><svg width="30" height="20" viewBox="0 0 12 8" shape-rendering="crispEdges"><g fill="currentColor"><rect x="0" y="0" width="12" height="1"/><rect x="0" y="7" width="12" height="1"/><rect x="0" y="1" width="1" height="6"/><rect x="11" y="1" width="1" height="6"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="4" width="4" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/></g></svg></i><span class="mailaddr__t">403areku@gmail.com</span>
+        <button class="mailaddr__c" id="copyMail" data-copy="403areku@gmail.com" data-tw="press"><span data-en="COPY">コピー</span></button>
+      </p>
       <p class="postcard__note" data-en="— thank you for reading this far. —">— ここまで見てくれて、ありがとうございました。 —</p>
     </div>
 
@@ -792,8 +814,8 @@
   </div>
 </footer>
 
-<script src="assets/js/tween.js"></script>
-<script src="assets/js/scene.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/tween.js?v=5"></script>
+<script src="assets/js/scene.js?v=5"></script>
+<script src="assets/js/main.js?v=5"></script>
 </body>
 </html>
