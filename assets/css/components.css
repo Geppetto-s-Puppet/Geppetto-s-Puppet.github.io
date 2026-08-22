@@ -102,7 +102,12 @@
 .nav__a:hover::after,.nav__a.is-on::after{transform:scaleX(1)}
 .nav__a.is-on{color:var(--ink)}
 
-/* 言語切替 */
+/* 自作のドット絵アイコン（封筒・国旗） */
+.ico{display:inline-block;width:1.2em;height:.8em;flex:none;vertical-align:-.05em}
+.ico svg{width:100%;height:100%;display:block}
+.flag{width:1.5em;height:1em;display:block;flex:none}
+
+/* 言語切替：いま押すと何になるか、を出す */
 .lang{
   flex:none;padding:4px 12px;font-size:var(--t-xs);letter-spacing:.14em;
   background:var(--paper);color:var(--ink);
@@ -110,6 +115,9 @@
   transition:background-color .2s,color .2s;
 }
 .lang:hover{background:var(--accent);color:var(--paper)}
+.lang span{display:flex;align-items:center;gap:8px}
+body:not([data-lang="en"]) .lang__to-ja{display:none}
+body[data-lang="en"] .lang__to-en{display:none}
 
 /* 常時出しておく連絡ボタン */
 .hud-cta{
@@ -124,6 +132,12 @@
     var(--sd) calc(var(--sd) - 4px) 0 0 var(--line);
 }
 .hud-cta:hover{background:var(--pink)}
+.hud-cta{display:flex;align-items:center;gap:8px}
+
+/* アイコン付きボタン */
+.btn--ico>span{display:inline}
+.btn--ico{display:inline-flex;align-items:center;justify-content:center;gap:10px}
+.btn--wide.btn--ico{display:flex}
 
 .menu-btn{display:none;width:44px;height:44px;position:relative;flex:none}
 .menu-btn span{display:block;height:4px;background:var(--ink);margin:6px 0;transition:.3s var(--e-out)}

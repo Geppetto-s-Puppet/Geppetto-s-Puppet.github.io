@@ -8,6 +8,60 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var reduced = TW.reduced;
 
+  /* 年齢はここだけで決める（誕生日は 2004年7月17日） */
+  var BIRTH = { y: 2004, m: 7, d: 17 };
+  function age() {
+    var t = new Date(), a = t.getFullYear() - BIRTH.y;
+    var mo = (t.getMonth() + 1) - BIRTH.m;
+    if (mo < 0 || (mo === 0 && t.getDate() < BIRTH.d)) a--;
+    return a;
+  }
+  $$('[data-age]').forEach(function (el) { el.textContent = age(); });
+
+  /* 公開リポジトリ数は GitHub から。取れなければ HTML の値のまま */
+  (function repoCount() {
+    var el = $('#repoCount');
+    if (!el) return;
+    var KEY = 'gp-repos', cached = sessionStorage.getItem(KEY);
+    if (cached) el.textContent = cached;
+    fetch('https://api.github.com/users/Geppetto-s-Puppet')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || typeof d.public_repos !== 'number') return;
+        el.textContent = d.public_repos;
+        sessionStorage.setItem(KEY, d.public_repos);
+      })
+      .catch(function () {});
+  })();
+
+  /* 流れる文字：1本が画面幅より短いと途中で切れて見えるので、
+     幅を超えるまで繰り返してから2本並べる（-50%動かすと繋がる） */
+  (function ticker() {
+    var box = $('#tickerIn');
+    if (!box) return;
+    function build() {
+      var unit = $('.ticker__unit', box);
+      if (!unit) return;
+      var txt = unit.dataset.txt || (unit.dataset.txt = unit.textContent);
+      unit.textContent = txt;
+      var guard = 0;
+      while (unit.offsetWidth < innerWidth && guard++ < 20) unit.textContent += txt;
+      var twin = unit.cloneNode(true);
+      box.innerHTML = '';
+      box.appendChild(unit);
+      box.appendChild(twin);
+    }
+    build();
+    var t = 0;
+    addEventListener('resize', function () {
+      clearTimeout(t);
+      t = setTimeout(function () {
+        var u = $('.ticker__unit', box);
+        if (u && u.offsetWidth < innerWidth) build();
+      }, 200);
+    });
+  })();
+
   /* ══════════ 1. ローディング ══════════ */
   (function boot() {
     var el = $('#boot'), bar = $('#bootBar'), dots = $('#bootDots');
@@ -386,12 +440,13 @@
       view.scrollLeft = 0;
     });
 
-    var shots = $('#itrShots'), main = $('#itrMain');
+    var shots = $('#itrShots'), main = $('#itrMain'), lab = $('#itrLabel');
     if (shots && main) {
-      $$('button', shots).forEach(function (b, k) {
-        if (k === 0) b.classList.add('is-on');
+      $$('button', shots).forEach(function (b) {
+        if (b.dataset.src === main.getAttribute('src')) b.classList.add('is-on');
         b.addEventListener('click', function () {
           main.src = b.dataset.src;
+          if (lab && b.dataset.lab) lab.textContent = b.dataset.lab;
           $$('button', shots).forEach(function (o) { o.classList.toggle('is-on', o === b); });
         });
       });
@@ -414,6 +469,7 @@
 
     function set(l) {
       document.documentElement.lang = l;
+      document.body.dataset.lang = l;
       nodes.forEach(function (el) {
         el.innerHTML = l === 'en' ? esc(el.dataset.en).replace(/\|/g, '<br>') : el.dataset.ja;
       });
@@ -421,12 +477,12 @@
         s.dataset.n = (l === 'en' && s.dataset.nEn) ? s.dataset.nEn : s.dataset.nJa;
         s.dataset.d = (l === 'en' && s.dataset.dEn) ? s.dataset.dEn : s.dataset.dJa;
       });
-      btn.textContent = l === 'en' ? 'JA' : 'EN';
       btn.setAttribute('aria-label', l === 'en' ? '日本語に切り替え' : 'Switch to English');
       localStorage.setItem('gp-lang', l);
       document.dispatchEvent(new CustomEvent('langchange', { detail: l }));
     }
 
+    document.body.dataset.lang = 'ja';
     btn.addEventListener('click', function () {
       set(document.documentElement.lang === 'en' ? 'ja' : 'en');
     });

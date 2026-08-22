@@ -44,7 +44,8 @@
 .facts__grid b i{font-style:normal;font-size:var(--t-xs);color:var(--paper)}
 .facts__grid span{font-size:var(--t-xs);opacity:.85;line-height:1.4}
 .facts__cta a{--ty:0px;display:flex;flex-direction:column;gap:2px;transform:translate3d(0,var(--ty),0)}
-.facts__cta b{color:var(--pink)}
+.facts__cta b{color:var(--pink);display:flex;justify-content:center;align-items:center}
+.facts__cta .ico{width:1.5em;height:1em}
 .facts__cta a:hover b{color:var(--sun)}
 
 /* ══════════ セクション共通 ══════════ */
@@ -150,9 +151,10 @@
 }
 .slide__art{position:relative;min-width:0}
 .slide__art>img,.slide__art>canvas{
-  width:100%;height:auto;display:block;image-rendering:pixelated;
+  width:100%;height:auto;display:block;
   box-shadow:0 0 0 4px var(--line);
 }
+.slide__art>canvas{image-rendering:pixelated}
 .slide__badge{
   position:absolute;left:0;top:0;z-index:2;
   padding:2px 10px;font-size:var(--t-xs);letter-spacing:.06em;
@@ -165,7 +167,14 @@
   transition:opacity .2s,transform .25s var(--e-back);
 }
 .slide__shots button:hover,.slide__shots button.is-on{opacity:1;transform:translateY(-3px)}
-.slide__shots img{width:100%;height:auto;display:block;image-rendering:pixelated}
+.slide__shots img{width:100%;height:auto;display:block}
+.slide__shots button{position:relative}
+.slide__shots button::after{
+  content:attr(data-lab);
+  position:absolute;left:0;bottom:0;
+  padding:0 4px;font-family:var(--f);font-size:10px;letter-spacing:.08em;line-height:1.6;
+  background:var(--ink);color:var(--paper);
+}
 
 .slide__body{min-width:0}
 .slide__t{font-size:var(--t-m);line-height:1.25;letter-spacing:.04em;text-shadow:3px 3px 0 var(--shade)}
@@ -289,7 +298,7 @@
   width:150px;font-weight:400;color:var(--accent);font-size:var(--t-xs);
   letter-spacing:.08em;white-space:nowrap;
 }
-.cv__t td small{display:block;margin-top:4px;line-height:1.7}
+.cv__t td small{display:inline;line-height:1.7}
 .cv__t tr.is-now td{color:var(--ink)}
 .cv__t tr.is-now th{color:var(--pink)}
 .cv__t tr.is-now{background:color-mix(in srgb,var(--pink) 10%,transparent)}

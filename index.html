@@ -58,8 +58,8 @@
   </nav>
 
   <div class="hud__right">
-    <button class="lang" id="langBtn" aria-label="Switch to English">EN</button>
-    <a class="hud-cta" href="#contact" data-tw="press"><span data-en="✉ HIRE ME">✉ 連絡する</span></a>
+    <button class="lang" id="langBtn" aria-label="Switch to English"><span class="lang__to-en"><svg class="flag" viewBox="0 0 12 8" shape-rendering="crispEdges"><rect width="12" height="8" fill="#f4f4f4"/><g fill="#c8102e"><rect y="0" width="12" height="1"/><rect y="2" width="12" height="1"/><rect y="4" width="12" height="1"/><rect y="6" width="12" height="1"/></g><rect width="5" height="4" fill="#0a3161"/><g fill="#fff"><rect x="1" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/></g><rect width="12" height="8" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/></svg>EN</span><span class="lang__to-ja"><svg class="flag" viewBox="0 0 12 8" shape-rendering="crispEdges"><rect width="12" height="8" fill="#f4f4f4"/><g fill="#bc002d"><rect x="5" y="1" width="2" height="1"/><rect x="4" y="2" width="4" height="1"/><rect x="4" y="3" width="4" height="1"/><rect x="4" y="4" width="4" height="1"/><rect x="5" y="5" width="2" height="1"/></g><rect width="12" height="8" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/></svg>JA</span></button>
+    <a class="hud-cta" href="#contact" data-tw="press"><i class="ico" aria-hidden="true"><svg viewBox="0 0 12 8" shape-rendering="crispEdges"><g fill="currentColor"><rect x="0" y="0" width="12" height="1"/><rect x="0" y="7" width="12" height="1"/><rect x="0" y="1" width="1" height="6"/><rect x="11" y="1" width="1" height="6"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="4" width="4" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/></g></svg></i><span data-en="HIRE ME">連絡する</span></a>
     <button class="menu-btn" id="menuBtn" aria-label="メニュー" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -74,14 +74,14 @@
 </div>
 
 <!-- BGM -->
-<audio id="bgm" src="assets/audio/snowdrop.mp3" loop preload="none"></audio>
+<audio id="bgm" src="assets/audio/tangy.mp3" loop preload="none"></audio>
 <aside class="player" id="player" aria-label="BGM プレイヤー">
   <div class="player__deck" aria-hidden="true">
     <span class="reel"></span><span class="tape"></span><span class="reel"></span>
   </div>
   <div class="player__body">
     <p class="player__label">NOW PLAYING</p>
-    <p class="player__title"><span id="npTitle">Snowdrop — Kyatto</span></p>
+    <p class="player__title"><span id="npTitle">Tangy — Kyatto</span></p>
     <div class="player__row">
       <button class="pbtn" id="playBtn" aria-label="再生 / 停止">▶</button>
       <div class="eq" id="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
@@ -121,7 +121,7 @@
 
     <div class="hero__cta" data-rv data-rv-d="260">
       <a href="#works" class="btn btn--primary" data-tw="press"><span data-en="▶ SEE MY WORKS">▶ WORKS をみる</span></a>
-      <a href="#contact" class="btn" data-tw="press"><span data-en="✉ CONTACT">✉ CONTACT</span></a>
+      <a href="#contact" class="btn btn--ico" data-tw="press"><i class="ico" aria-hidden="true"><svg viewBox="0 0 12 8" shape-rendering="crispEdges"><g fill="currentColor"><rect x="0" y="0" width="12" height="1"/><rect x="0" y="7" width="12" height="1"/><rect x="0" y="1" width="1" height="6"/><rect x="11" y="1" width="1" height="6"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="4" width="4" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/></g></svg></i><span data-en="CONTACT">CONTACT</span></a>
     </div>
   </div>
 
@@ -131,10 +131,7 @@
   </a>
 
   <div class="ticker" aria-hidden="true">
-    <div class="ticker__in">
-      <span>★ REVERSE ENGINEERING ★ SHADERS ★ GAME SERVERS ★ METAL GARDEN ★ 仕様書のない場所ばかり触ってきました ★&nbsp;</span>
-      <span>★ REVERSE ENGINEERING ★ SHADERS ★ GAME SERVERS ★ METAL GARDEN ★ 仕様書のない場所ばかり触ってきました ★&nbsp;</span>
-    </div>
+    <div class="ticker__in" id="tickerIn"><span class="ticker__unit">★ どくがくプログラマー SELF-TAUGHT PROGRAMMER ★ 低レイヤのことも知りたい REVERSE ENGINEERING ★ GMODシェーダーライブラリ公式JPフォーラムかんりにん GShaders MODERATOR ★ こじんじぎょうぬし METAL GARDEN FOUNDER ★ ばいくのり YZF-R25 RIDER ★ 足関節をれんしゅうしたい WEEKEND MMA FIGHTER ★ </span></div>
   </div>
 </section>
 
@@ -142,12 +139,12 @@
 <section class="facts" aria-label="要点">
   <div class="wrap">
     <ul class="facts__grid">
-      <li><b>22</b><span data-en="years old / Kumamoto, JP">歳 ／ 熊本市</span></li>
-      <li><b>15<i>y</i></b><span data-en="running game servers">ゲームサーバー運営</span></li>
-      <li><b>22</b><span data-en="public repositories">公開リポジトリ</span></li>
-      <li><b>200<i>k</i></b><span data-en="views on game commentary">実況の再生数</span></li>
-      <li><b>JP<i>/</i>EN<i>/</i>RO</b><span data-en="languages spoken">話せる言語</span></li>
-      <li class="facts__cta"><a href="#contact" data-tw="press"><b>✉</b><span data-en="contact me">連絡する</span></a></li>
+      <li><b data-age>22</b><span data-en="years old / Kumamoto">歳・熊本市</span></li>
+      <li><b>15年</b><span data-en="running servers">サーバー運営</span></li>
+      <li><b id="repoCount">22</b><span data-en="public repositories">公開リポジトリ</span></li>
+      <li><b>200k</b><span data-en="views on commentary">実況の再生数</span></li>
+      <li><b>JP/EN/RO</b><span data-en="languages spoken">話せる言語</span></li>
+      <li class="facts__cta"><a href="#contact" data-tw="press"><b><i class="ico" aria-hidden="true"><svg viewBox="0 0 12 8" shape-rendering="crispEdges"><g fill="currentColor"><rect x="0" y="0" width="12" height="1"/><rect x="0" y="7" width="12" height="1"/><rect x="0" y="1" width="1" height="6"/><rect x="11" y="1" width="1" height="6"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="4" width="4" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/></g></svg></i></b><span data-en="contact me">連絡する</span></a></li>
     </ul>
   </div>
 </section>
@@ -155,7 +152,6 @@
 <!-- ══════════════ 01 PROFILE ══════════════ -->
 <section id="about" class="sec sec--about" data-sec="01">
   <div class="edge edge--top" aria-hidden="true"></div>
-  <img class="sticker sticker--seal" src="assets/img/art/gomafu.png" alt="" aria-hidden="true">
   <div class="wrap">
 
     <div class="sec-head" data-rv>
@@ -180,21 +176,22 @@
 
       <div class="status__main frame" data-rv data-rv-d="90">
         <dl class="kv">
-          <div><dt>NAME</dt><dd>塚本 武龍 アレクサンドル <small data-en="Takeru Tsukamoto Alexandru">／ TAKERU TSUKAMOTO ALEXANDRU</small></dd></div>
-          <div><dt>CALL</dt><dd data-en="ALEX / Alec">アレク ／ ALEX</dd></div>
-          <div><dt>AGE</dt><dd><span data-count="22">0</span> <small data-en="born July 2004, Chuo-ku Kumamoto. Two years in Hakata, Fukuoka.">／ 2004年7月 熊本市中央区生まれ・博多に2年</small></dd></div>
-          <div><dt>STUDY</dt><dd data-en="The Open University of Japan — Information Course (enrolled Apr 2026)">放送大学 教養学部 情報コース <small>／ 2026年4月 入学</small></dd></div>
-          <div><dt>WORK</dt><dd data-en="METAL GARDEN — sole proprietorship. Online English tutor teaching through programming and Minecraft.">個人事業「METAL GARDEN」 <small>／ プログラミングとMinecraftで教えるオンライン英語講師</small></dd></div>
+          <div><dt>NAME</dt><dd data-en="TAKERU TSUKAMOTO ALEXANDRU">塚本 武龍 アレクサンドル</dd></div>
+          <div><dt>CALL</dt><dd data-en="ALEX">アレク</dd></div>
+          <div><dt>AGE</dt><dd><span data-age>22</span></dd></div>
+          <div><dt>BASE</dt><dd data-en="Chuo-ku, Kumamoto (2 years in Hakata, Fukuoka)">熊本市中央区 <small>／ 2年間は博多に在住</small></dd></div>
+          <div><dt>STUDY</dt><dd data-en="The Open University of Japan — Information Course">放送大学 教養学部 情報コース</dd></div>
+          <div><dt>WORK</dt><dd data-en="METAL GARDEN — contract development and English tutoring">個人事業「METAL GARDEN」 <small>／ 受託開発と英語講師</small></dd></div>
           <div><dt>LANG</dt><dd data-en="Japanese (native) / English / Romanian — Russian &amp; Chinese in progress">日本語 ／ 英語 ／ ルーマニア語 <small>／ ロシア語・中国語は勉強中</small></dd></div>
           <div><dt>LICENSE</dt><dd data-en="Semi-medium truck / Motorcycle / EIKEN Grade Pre-1">準中型自動車 ／ 普通自動二輪 ／ 英検準一級</dd></div>
         </dl>
 
         <div class="stats">
-          <div class="stat"><span class="stat__n" data-en="GRAPHICS">GRAPHICS</span><span class="bar"><i data-val="86"></i></span><span class="stat__v" data-count="86">0</span></div>
-          <div class="stat"><span class="stat__n" data-en="REVERSE ENG.">REVERSE</span><span class="bar"><i data-val="90"></i></span><span class="stat__v" data-count="90">0</span></div>
+          <div class="stat"><span class="stat__n" data-en="LLM">LLM</span><span class="bar"><i data-val="86"></i></span><span class="stat__v" data-count="86">0</span></div>
+          <div class="stat"><span class="stat__n" data-en="GRAPHICS">GRAPHICS</span><span class="bar"><i data-val="90"></i></span><span class="stat__v" data-count="90">0</span></div>
           <div class="stat"><span class="stat__n" data-en="SERVER OPS">SERVER</span><span class="bar"><i data-val="88"></i></span><span class="stat__v" data-count="88">0</span></div>
-          <div class="stat"><span class="stat__n" data-en="MATH / PHYS">数学・物理</span><span class="bar"><i data-val="74"></i></span><span class="stat__v" data-count="74">0</span></div>
-          <div class="stat"><span class="stat__n" data-en="FPS AIM">FPSのうで</span><span class="bar"><i data-val="99"></i></span><span class="stat__v" data-count="99">0</span></div>
+          <div class="stat"><span class="stat__n" data-en="PHYSICS">PHYS</span><span class="bar"><i data-val="74"></i></span><span class="stat__v" data-count="74">0</span></div>
+          <div class="stat"><span class="stat__n" data-en="GAME SKILL">ゲームのうで</span><span class="bar"><i data-val="99"></i></span><span class="stat__v" data-count="99">0</span></div>
         </div>
       </div>
     </div>
@@ -213,7 +210,6 @@
 
 <!-- ══════════════ 02 WORKS ══════════════ -->
 <section id="works" class="sec sec--works" data-sec="02">
-  <img class="sticker sticker--jurassic" src="assets/img/art/jurassic.png" alt="" aria-hidden="true">
   <div class="wrap">
 
     <div class="sec-head" data-rv>
@@ -231,14 +227,14 @@
 
           <article class="slide">
             <div class="slide__art">
-              <img id="itrMain" src="assets/img/works/into-the-reality-2.png" alt="Into the Reality を適用した Garry's Mod の画面">
-              <span class="slide__badge">GLua / HLSL</span>
+              <img id="itrMain" src="assets/img/works/itr-after-1.jpg" alt="Into the Reality を適用した Garry's Mod の画面">
+              <span class="slide__badge" id="itrLabel">AFTER</span>
               <div class="slide__shots" id="itrShots">
-                <button type="button" data-src="assets/img/works/into-the-reality-2.png"><img src="assets/img/works/into-the-reality-2.png" alt="適用画面 1"></button>
-                <button type="button" data-src="assets/img/works/into-the-reality-1.png"><img src="assets/img/works/into-the-reality-1.png" alt="適用画面 2"></button>
-                <button type="button" data-src="assets/img/works/into-the-reality-3.png"><img src="assets/img/works/into-the-reality-3.png" alt="適用画面 3"></button>
-                <button type="button" data-src="assets/img/works/into-the-reality-4.png"><img src="assets/img/works/into-the-reality-4.png" alt="適用画面 4"></button>
-                <button type="button" data-src="assets/img/works/into-the-reality-5.png"><img src="assets/img/works/into-the-reality-5.png" alt="適用画面 5"></button>
+                <button type="button" data-src="assets/img/works/itr-before-1.jpg" data-lab="BEFORE"><img src="assets/img/works/itr-before-1.jpg" alt="適用前の画面 1"></button>
+                <button type="button" data-src="assets/img/works/itr-before-2.jpg" data-lab="BEFORE"><img src="assets/img/works/itr-before-2.jpg" alt="適用前の画面 2"></button>
+                <button type="button" data-src="assets/img/works/itr-after-1.jpg" data-lab="AFTER"><img src="assets/img/works/itr-after-1.jpg" alt="適用後の画面 1"></button>
+                <button type="button" data-src="assets/img/works/itr-after-2.jpg" data-lab="AFTER"><img src="assets/img/works/itr-after-2.jpg" alt="適用後の画面 2"></button>
+                <button type="button" data-src="assets/img/works/itr-after-3.jpg" data-lab="AFTER"><img src="assets/img/works/itr-after-3.jpg" alt="適用後の画面 3"></button>
               </div>
             </div>
             <div class="slide__body">
@@ -371,7 +367,7 @@
 
           <article class="slide">
             <div class="slide__art">
-              <img src="assets/img/works/cudachan-1.png" alt="コンテナ内で nvidia-smi を実行し RTX 4060 を認識している画面">
+              <img src="assets/img/works/cudachan-1.jpg" alt="コンテナ内で nvidia-smi を実行し RTX 4060 を認識している画面">
               <span class="slide__badge">CUDA / Docker</span>
             </div>
             <div class="slide__body">
@@ -455,132 +451,12 @@
       </div>
     </div>
 
-    <div class="repos-head" data-rv>
-      <h3>ALL REPOSITORIES</h3>
-      <span class="repos-count">22</span>
-      <span class="sec-rule"></span>
-      <a class="repos-link" href="https://github.com/Geppetto-s-Puppet?tab=repositories" target="_blank" rel="noopener" data-tw="press"><span data-en="→ See on GitHub">→ GitHub でみる</span></a>
-    </div>
-
-    <ul class="repos" data-rv data-rv-d="60">
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/SKULL-26.2" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">SKULL-26.2</span>
-        <span class="repo__d" data-en="Zombie AI that hunts: flanking, climbing, hound packs, pantry raids.">Minecraft のゾンビに狩りをさせる AI。側面回り込み・登攀・犬の群れ・食料庫の襲撃。</span>
-        <span class="repo__m"><i>Java</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/FANTASIA" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">FANTASIA / 永い夢</span>
-        <span class="repo__d" data-en="An ensemble story: 10 arcs, 999 episodes, 350 characters. Everyone reverse-engineers a world with no spec.">全10編・999話・350キャラの群像劇。仕様書のない世界で、全員が手探りでリバースエンジニアリングをしている話。</span>
-        <span class="repo__m"><i>JavaScript</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/CQC" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">CQC / 徒手格闘</span>
-        <span class="repo__d" data-en="A five-part rebuild of unarmed combat technique, grounded in public military manuals and peer-reviewed papers.">公開されている軍の教範と査読論文を土台に、MMA 系ルールの技術体系を5部構成で組み直した文書。</span>
-        <span class="repo__m"><i>Document</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/product-importer-chan" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">product-importer-chan</span>
-        <span class="repo__d" data-en="Shopify → Shopify product import. Pulls from a public products.json, applies a price transform, posts via Admin API. Idempotent.">Shopify → Shopify の商品インポート。公開 products.json から抽出し、価格変換をかけて Admin API で追加。冪等。</span>
-        <span class="repo__m"><i>Python</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/Zikkyou-Chan" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">実況ちゃん</span>
-        <span class="repo__d" data-en="Auto-editing AI for game commentary. Long-form assembly and clip extraction, all on a local LLM.">ゲーム実況の自動編集AI。長尺づくりと切り抜きを、ローカル LLM で完結させる。</span>
-        <span class="repo__m"><i>Python</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/Modern-Physics" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">Modern-Physics</span>
-        <span class="repo__d" data-en="A full table of contents from classical mechanics to GR, QM, the Standard Model, index theorems, CFT and string theory.">古典力学から一般相対論・量子力学・標準模型・指数定理・共形場理論・弦理論までのロードマップ総目次。</span>
-        <span class="repo__m"><i>Document</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/kappalogic" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">kappalogic</span>
-        <span class="repo__d" data-en="A Python library making discrete logic differentiable from a single tanh(x/ξ) primitive. On PyPI.">tanh(x/ξ) だけを基本ブロックにして、離散論理を微分可能にする Python ライブラリ。PyPI 公開済み。</span>
-        <span class="repo__m"><i>Python</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/Node-Chan" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">ノードちゃん</span>
-        <span class="repo__d" data-en="An app that makes a contractor's shift table readable. Merges several Google Sheets accounts and fixes the parsing.">業務委託先のシフト表を見やすくするアプリ。Google Sheets API で複数アカウントを束ねてパース。</span>
-        <span class="repo__m"><i>TypeScript</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/q-chan" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">Qちゃん</span>
-        <span class="repo__d" data-en="Eigenvalues of the 1D Schrödinger equation on a grid. Heading toward density functional theory. WIP.">グリッド分割で一次元シュレディンガー方程式の固有値を出すところまで。密度汎関数へ向かう WIP。</span>
-        <span class="repo__m"><i>Python</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/Minimal-Wallpaper-GIF" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">Minimal-Wallpaper-GIF</span>
-        <span class="repo__d" data-en="Loops a GIF as your Windows desktop wallpaper. Drag and drop, remembers the path, registers itself at startup.">GIF をデスクトップ背景としてループ再生する Windows 用プログラム。D&amp;D で設定、パス記憶、スタートアップ登録まで。</span>
-        <span class="repo__m"><i>C++</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/CudaChan-RTX4060LaptopGPU" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">CudaChan-RTX4060LaptopGPU</span>
-        <span class="repo__d" data-en="A CUDA playground that started from &quot;I wanted my own GLaDOS or SCP-079&quot;.">「『GLaDOS』や『SCP-079』がほしくなった」から始まった CUDA まわりの実験場。</span>
-        <span class="repo__m"><i>CUDA</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/echo-chan" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">エコーちゃん</span>
-        <span class="repo__d" data-en="Commissioned by a friend. A bot that automates copy trading on a trading platform.">友人からの受託。取引プラットフォーム上のコピートレードを自動化する BOT ツール。</span>
-        <span class="repo__m"><i>Python</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/Friendly-Fire" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">フレンドリー・ファイア</span>
-        <span class="repo__d" data-en="A Paper minigame server. FAWE API called directly, Java reflection, Aikar's Flags, UPnP port forwarding.">Paper 製ミニゲームサーバー。FAWE API 直叩き、Java リフレクション、Aikar's Flags、UPnP ポート開放。</span>
-        <span class="repo__m"><i>Java / Skript</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/old-cudachan-renamed-pychan" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">CUDAちゃん</span>
-        <span class="repo__d" data-en="A lightweight LLM runtime for the RTX 4060. NF4 4-bit quantization + Docker. My CS50 final project.">RTX 4060 向けの軽量 LLM ランタイム。NF4 4bit 量子化 + Docker。CS50 最終課題。</span>
-        <span class="repo__m"><i>Python</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/MC-Infected-CUDA" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">MC-Infected-CUDA</span>
-        <span class="repo__d" data-en="A Minecraft plugin for an Infected-style minigame. A small single-class prototype.">Infected 系ミニゲームの Minecraft プラグイン。単一クラス構成の小さな試作。</span>
-        <span class="repo__m"><i>Java</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/DoronkoWanko_DLSS" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">DoronkoWanko_DLSS</span>
-        <span class="repo__d" data-en="Bolting custom shaders and DLSS onto a Unity URP game. dnSpy to analyse, reflection to reach in, DX12 to sync.">Unity URP 製ゲームにカスタムシェーダーと DLSS を後付けする。dnSpy で解析 → リフレクション → DX12 で同期。</span>
-        <span class="repo__m"><i>C / C++</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/PEAK-HLSL" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">PEAK-HLSL</span>
-        <span class="repo__d" data-en="Everything needed to inject a shader into a shipped URP Forward game. BepInEx + D3D12.">URP Forward のゲームに、ビルド後からシェーダーを差し込むための一式。BepInEx + D3D12。</span>
-        <span class="repo__m"><i>C++</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/GMod-SSGI" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">GMod-SSGI</span>
-        <span class="repo__d" data-en="Indirect lighting via Visibility Bitmask plus an À-Trous denoiser, brought down to DX9-era shaders.">Visibility Bitmask による間接光と À-Trous デノイザ。論文をそのまま DX9 世代へ落とし込んだ。</span>
-        <span class="repo__m"><i>HLSL</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/into-the-reality" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">Into the Reality</span>
-        <span class="repo__d" data-en="All-in-one photorealism pack for Garry's Mod. Released on the Steam Workshop.">Garry's Mod 用オールインワン写実化パック。Steam Workshop 公開。</span>
-        <span class="repo__m"><i>GLua / HLSL</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/audio-analyzer" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">オーディオアナライザー</span>
-        <span class="repo__d" data-en="An AviUtl2 plugin for streamers showing average and peak volume, for setting up a microphone.">平均音量・最大音量を表示する、ゲーム実況者向けの AviUtl2 プラグイン。マイク調整用。</span>
-        <span class="repo__m"><i>C++</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/gomaf-catalogue" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">ごまふ郷殺人事件</span>
-        <span class="repo__d" data-en="&quot;Something is hiding in this town.&quot; A FiveM server project. Still in progress.">「この街には、何かが潜んでいる」。FiveM のサーバー企画。制作途中。</span>
-        <span class="repo__m"><i>JavaScript</i><i>2026</i></span></a></li>
-
-      <li class="repo"><a href="https://github.com/Geppetto-s-Puppet/Geppetto-s-Puppet.github.io" target="_blank" rel="noopener" data-tw="lift">
-        <span class="repo__n">Geppetto-s-Puppet.github.io</span>
-        <span class="repo__d" data-en="This site. The background pixel art is drawn on a canvas at runtime.">このサイト。背景のドット絵は canvas でその場に生成しています。</span>
-        <span class="repo__m"><i>HTML / JS</i><i>2025</i></span></a></li>
-    </ul>
-
   </div>
   <div class="edge edge--bottom" aria-hidden="true"></div>
 </section>
 
 <!-- ══════════════ 03 SKILL ══════════════ -->
 <section id="skills" class="sec sec--skills" data-sec="03">
-  <img class="sticker sticker--creeper" src="assets/img/art/creeper.png" alt="" aria-hidden="true">
   <div class="wrap">
 
     <div class="sec-head" data-rv>
@@ -650,20 +526,29 @@
     <div class="cv" data-rv data-rv-d="80">
       <h3 class="cv__h" data-en="WORK &amp; BUSINESS">職歴・事業</h3>
       <table class="cv__t"><tbody>
-        <tr><th data-en="student years">学生期</th><td data-en="Christmas event sales staff (3 months), then re-hired by the store manager as izakaya floor staff">クリスマスイベント 販売スタッフ（3ヶ月）→ 店長の誘いで居酒屋スタッフとして再雇用</td></tr>
+        <tr><th data-en="student years">学生期</th><td data-en="Christmas event sales staff (3 months)|/ then re-hired by the store manager as izakaya floor staff in Nakasu, Fukuoka">クリスマスイベント 販売スタッフ（3ヶ月）<br>／ 店長の誘いで、中洲の居酒屋スタッフとして再雇用</td></tr>
         <tr><th>2024.06<br>—2025.03</th><td data-en="Kyoritsu Maintenance Co., Ltd. — student dormitory staff, meal service support (part-time). Negotiated the role directly with the dorm manager. Left at the end of contract.">共立メンテナンス株式会社 学生寮スタッフ（寮食補助・パート）<small>／ 寮長に直接交渉して着任。契約期間満了により退職</small></td></tr>
         <tr><th data-en="2025.09—now">2025.09<br>—現在</th><td data-en="Bartender in Shimotori, Kumamoto (part-time)">熊本市下通にてバーテンダー（アルバイト）</td></tr>
-        <tr class="is-now"><th>2026</th><td data-en="METAL GARDEN — sole proprietorship. Online English tutor teaching through programming and Minecraft. Separate business account, business plan approved. Currently operating within my parents' dependent allowance.">個人事業「METAL GARDEN」開業 <small>／ プログラミングとMinecraftを通したオンライン英語講師。事業用口座を分け、事業計画書も通っています。現在は親の扶養内で運営中</small></td></tr>
+        <tr><th>2026</th><td data-en="METAL GARDEN — sole proprietorship. Contract development and online English tutoring. Under a business contract with asonova Inc. (an AEON Fantasy company). Separate business account, business plan approved.">個人事業「METAL GARDEN」開業 <small>／ 受託開発とオンライン英語講師。株式会社 asonova（イオンファンタジー傘下）と業務委託契約。事業用口座を分け、事業計画書も通っています</small></td></tr>
+        <tr class="is-now"><th>2026</th><td data-en="Received a job offer from an AI automation company in Roppongi, Tokyo">六本木の AI 自動化企業より内定</td></tr>
       </tbody></table>
     </div>
 
     <div class="cv" data-rv data-rv-d="160">
       <h3 class="cv__h" data-en="CERTIFICATIONS">資格</h3>
       <table class="cv__t"><tbody>
+        <tr><th>2021.01</th><td data-en="EIKEN Grade Pre-1 (taken in January of my first year of high school)">実用英語技能検定 準一級 <small>／ 高校1年生の1月に取得</small></td></tr>
         <tr><th>2021.08</th><td data-en="University of Montana — English Language Institute, Certificate of Completion (selected as a prefectural delegate)">モンタナ大学 English Language Institute 修了 <small>／ 県代表の派遣学生として選抜</small></td></tr>
-        <tr><th data-en="high school">高校在学中</th><td data-en="EIKEN Grade Pre-1">実用英語技能検定 準一級</td></tr>
         <tr><th>2025.07</th><td data-en="Semi-medium motor vehicle licence">準中型自動車免許</td></tr>
-        <tr><th>—</th><td data-en="Ordinary motorcycle licence">普通自動二輪免許</td></tr>
+        <tr><th>2025.09</th><td data-en="Ordinary motorcycle licence">普通自動二輪免許</td></tr>
+      </tbody></table>
+    </div>
+
+    <div class="cv" data-rv data-rv-d="200">
+      <h3 class="cv__h" data-en="ELSEWHERE">そのほか</h3>
+      <table class="cv__t"><tbody>
+        <tr><th data-en="1st year at college">専門1年</th><td data-en="Lived in Kabukicho / Hyakunincho, Tokyo for one month">東京・歌舞伎町／百人町に1ヶ月間だけ住んでいました</td></tr>
+        <tr><th>—</th><td data-en="Volunteered at a soup kitchen for people sleeping rough in Nishinari, Osaka">大阪・西成のホームレス炊き出しに参加</td></tr>
       </tbody></table>
     </div>
 
@@ -673,7 +558,6 @@
 
 <!-- ══════════════ 05 MORE ══════════════ -->
 <section id="more" class="sec sec--more" data-sec="05">
-  <img class="sticker sticker--flamingo" src="assets/img/art/flamingoma.png" alt="" aria-hidden="true">
   <div class="wrap">
 
     <div class="sec-head" data-rv>
@@ -843,17 +727,10 @@
     <!-- ══════ 自作の絵 ══════ -->
     <div class="art-head" data-rv>
       <h3>ART</h3>
-      <span class="sec-jp" data-en="drawn by me, or drawn for me">描いたもの・描いてもらったもの</span>
+      <span class="sec-jp" data-en="coming soon">じゅんびちゅう</span>
       <span class="sec-rule"></span>
     </div>
-    <div class="gallery" data-rv data-rv-d="60">
-      <figure class="gal"><img src="assets/img/art/ghost-reaper.png" alt="骸骨の死神を描いたイラスト「GHOST REAPER」"><figcaption>GHOST REAPER</figcaption></figure>
-      <figure class="gal"><img src="assets/img/art/jurassic.png" alt="青い恐竜を水彩ふうに描いたイラスト「JURASSIC IMITATION」"><figcaption>JURASSIC IMITATION</figcaption></figure>
-      <figure class="gal"><img src="assets/img/art/creeper.png" alt="夜の木の下に立つ Minecraft のクリーパーを描いたイラスト"><figcaption data-en="Creeper under a black tree">黒い木の下のクリーパー</figcaption></figure>
-      <figure class="gal"><img src="assets/img/art/flamingoma.png" alt="フラミンゴとアザラシを合わせたグラフィック「Flamingoma」"><figcaption>Flamingoma</figcaption></figure>
-      <figure class="gal gal--s"><img src="assets/img/art/kawa.png" alt="サングラスをかけた緑のキャラクターのイラスト"><figcaption data-en="Somebody">なにか</figcaption></figure>
-      <figure class="gal gal--s"><img src="assets/img/art/gomafu.png" alt="ごまふあざらしのちいさなドット絵"><figcaption>gomafu</figcaption></figure>
-    </div>
+    <p class="sec-lead" data-rv data-en="Coming soon.">じゅんびちゅうです。</p>
 
   </div>
 </section>
@@ -891,7 +768,7 @@
       </p>
       <!-- ⟨EDIT⟩ メールアドレスと X のリンクを入れてください -->
       <div class="links">
-        <a class="btn btn--wide" href="#" title="⟨EDIT⟩ mailto: を入れる" data-tw="press"><span>✉ MAIL</span></a>
+        <a class="btn btn--wide btn--ico" href="#" title="⟨EDIT⟩ mailto: を入れる" data-tw="press"><i class="ico" aria-hidden="true"><svg viewBox="0 0 12 8" shape-rendering="crispEdges"><g fill="currentColor"><rect x="0" y="0" width="12" height="1"/><rect x="0" y="7" width="12" height="1"/><rect x="0" y="1" width="1" height="6"/><rect x="11" y="1" width="1" height="6"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="4" width="4" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/></g></svg></i><span>MAIL</span></a>
         <a class="btn btn--wide" href="https://github.com/Geppetto-s-Puppet" target="_blank" rel="noopener" data-tw="press"><span>◆ GITHUB</span></a>
         <a class="btn btn--wide" href="#" title="⟨EDIT⟩ X の URL を入れる" data-tw="press"><span>★ X</span></a>
         <a class="btn btn--wide" href="#" title="⟨EDIT⟩ 履歴書 / 職務経歴書へのリンク" data-tw="press"><span>§ RESUME</span></a>
@@ -908,7 +785,7 @@
   <div class="wrap foot__in">
     <p class="foot__c">(C) 2026 TAKERU TSUKAMOTO ALEXANDRU / METAL GARDEN</p>
     <p class="foot__f">
-      BGM: <b>Snowdrop</b> — Kyatto ／ TYPEFACE: PixelMplus (M+ FONTS PROJECT) ／
+      BGM: <b>Tangy</b> — Kyatto ／ TYPEFACE: PixelMplus (M+ FONTS PROJECT) ／
       <span data-en="Background pixel art is generated in your browser">背景のドット絵はブラウザ内で生成しています</span>
     </p>
     <button class="totop" id="toTop" data-tw="press">▲ TOP</button>
