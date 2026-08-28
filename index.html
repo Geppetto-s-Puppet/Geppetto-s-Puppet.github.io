@@ -18,10 +18,10 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 <link rel="preload" href="assets/fonts/PixelMplus10-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/tokens.css?v=5">
-<link rel="stylesheet" href="assets/css/base.css?v=5">
-<link rel="stylesheet" href="assets/css/components.css?v=5">
-<link rel="stylesheet" href="assets/css/sections.css?v=5">
+<link rel="stylesheet" href="assets/css/tokens.css?v=10">
+<link rel="stylesheet" href="assets/css/base.css?v=10">
+<link rel="stylesheet" href="assets/css/components.css?v=10">
+<link rel="stylesheet" href="assets/css/sections.css?v=10">
 </head>
 
 <body>
@@ -116,14 +116,8 @@
       <span class="hero__t2">ALEXANDRU</span>
     </h1>
 
-    <p class="hero__name" data-rv data-rv-d="100"
-       data-en="Takeru Tsukamoto Alexandru — call me ALEX">塚本 武龍 アレクサンドル ／ 通称 アレク・ALEX</p>
-
-    <p class="hero__lead" data-rv data-rv-d="180"
-       data-en="Graphics, reverse engineering and game servers — self-taught since childhood.|Shipped on the Steam Workshop and PyPI. Now looking for a team.">
-      グラフィックス、リバースエンジニアリング、ゲームサーバー。ぜんぶ独学です。<br>
-      Steam Workshop と PyPI に公開済み。そろそろ、チームで作りたい。
-    </p>
+    <p class="hero__role" data-rv data-rv-d="140"
+       data-en="Graphics Programmer ／ CUDA, DirectX, HLSL">グラフィックスプログラマー ／ CUDA, DirectX, HLSL</p>
 
     <div class="hero__cta" data-rv data-rv-d="260">
       <a href="#works" class="btn btn--primary" data-tw="press"><span data-en="▶ SEE MY WORKS">▶ WORKS をみる</span></a>
@@ -170,25 +164,20 @@
     <div class="status">
       <div class="status__port" data-rv>
         <div class="polaroid">
-          <div class="polaroid__win">
-            <canvas class="polaroid__bg" id="polaBg" aria-hidden="true"></canvas>
-            <!-- ⟨EDIT⟩ 描いた人のクレジットが要るなら下のキャプションに追記してください -->
-            <img class="polaroid__art" src="assets/img/art/portrait.png"
-                 alt="長い金髪に黒い上着のキャラクターを描いたイラスト">
-          </div>
-          <p class="polaroid__cap" data-en="PORTRAIT">PORTRAIT</p>
+          <img class="polaroid__photo" src="assets/img/art/portrait-chara.jpg" alt="自分をデフォルメして描いたキャラクター">
+          <img class="polaroid__frame" src="assets/img/art/polaroid-frame.webp" alt="" aria-hidden="true">
         </div>
       </div>
 
       <div class="status__main frame" data-rv data-rv-d="90">
         <dl class="kv">
-          <div><dt>NAME</dt><dd data-en="TAKERU TSUKAMOTO ALEXANDRU">塚本 武龍 アレクサンドル</dd></div>
+          <div><dt>NAME</dt><dd data-en="Takeru Alexandru Tsukamoto">塚本 武龍アレクサンドル</dd></div>
           <div><dt>CALL</dt><dd data-en="ALEX">アレク</dd></div>
           <div><dt>AGE</dt><dd><span data-age>22</span></dd></div>
-          <div><dt>BASE</dt><dd data-en="Chuo-ku, Kumamoto (2 years in Hakata, Fukuoka)">熊本市中央区 <small>／ 2年間は博多に在住</small></dd></div>
-          <div><dt>STUDY</dt><dd data-en="The Open University of Japan — Information Course (distance learning, so working alongside it is no problem)">放送大学 教養学部 情報コース <small>／ 通信なので就業と両立できます</small></dd></div>
-          <div><dt>WORK</dt><dd data-en="METAL GARDEN — contract development and English tutoring">個人事業「METAL GARDEN」 <small>／ 受託開発と英語講師</small></dd></div>
-          <div><dt>LANG</dt><dd data-en="Japanese (native) / English / Romanian — Russian &amp; Chinese in progress">日本語 ／ 英語 ／ ルーマニア語 <small>／ ロシア語・中国語は勉強中</small></dd></div>
+          <div><dt>BASE</dt><dd data-en="Chuo-ku, Kumamoto (2 years in Hakata, Fukuoka)">熊本市中央区 <small>／ 2年間だけ福岡市博多区</small></dd></div>
+          <div><dt>STUDY</dt><dd data-en="The Open University of Japan — Information Course (distance learning, so working alongside it is no problem)">放送大学 教養学部 情報コース <small>／ 通信制なので就業と両立できます</small></dd></div>
+          <div><dt>WORK</dt><dd data-en="METAL GARDEN — registered sole proprietorship. Contract development and English instruction.">個人事業「METAL GARDEN」 <small>／ 受託開発と英語講師</small></dd></div>
+          <div><dt>LANG</dt><dd data-en="Japanese (native) / English (fluent) / Romanian (fluent) — Russian &amp; Chinese in progress">日本語 ／ 英語 ／ ルーマニア語 <small>／ ロシア語・中国語は勉強中</small></dd></div>
           <div><dt>LICENSE</dt><dd data-en="Semi-medium truck / Motorcycle / EIKEN Grade Pre-1">準中型自動車 ／ 普通自動二輪 ／ 英検準一級</dd></div>
         </dl>
 
@@ -284,7 +273,7 @@
               <h3 class="slide__t">GMod-SSGI</h3>
               <p class="slide__jp" data-en="Real-time screen space global illumination for Garry's Mod">Garry's Mod のリアルタイム画面空間大域照明</p>
               <p class="slide__metrics">
-                <b data-en="2 papers implemented">論文2本を実装</b>
+                <b data-en="Ported from 2 published papers">査読論文2本から移植</b>
                 <b data-en="Down to DX9-era shaders">DX9世代へ移植</b>
               </p>
               <p class="slide__d" data-en="A real-time SSGI post-processing addon: Visibility Bitmask (Therrien et al., 2023) for horizon-based indirect lighting, and the Edge-Avoiding À-Trous Wavelet Transform (Dammertz et al., 2010) as the denoiser. I read the papers and brought them down to DX9-era shaders myself.">
@@ -310,14 +299,15 @@
               <p class="slide__jp" data-en="Rewriting discrete logic as differentiable real-valued formulas">離散論理を、微分可能な実数の式に書き直す</p>
               <p class="slide__metrics">
                 <b data-en="Published on PyPI">PyPI 公開済み</b>
-                <b data-en="1 primitive covers all gates">基本ブロックは1つだけ</b>
+                <b data-en="110 tests">テスト110本</b>
+                <b data-en="Machine-precision agreement">機械精度で一致</b>
               </p>
-              <p class="slide__d" data-en="A library that rewrites AND / OR / XOR, comparisons and branching as smooth formulas over the reals, using a single primitive: kappa(x/ξ) = tanh(x/ξ). As ξ→0 it becomes exact discrete logic; for ξ>0 it is a differentiable relaxation. I verified by hand that the same tanh shows up in heat kernels, Fermi distributions, kink solitons, hyperbolic geometry and information geometry. Published on PyPI.">
+              <p class="slide__d" data-en="A library that rewrites AND / OR / XOR, comparisons and branching as smooth formulas over the reals, using a single primitive: kappa(x/ξ) = tanh(x/ξ). As ξ→0 it becomes exact discrete logic; for ξ>0 it is a differentiable relaxation. I verified by hand that the same tanh shows up in heat kernels, Fermi distributions, kink solitons, hyperbolic geometry and information geometry. 110 tests, checked against Fermi-Dirac distributions to machine precision and against the energy of φ⁴ kink solitons.">
                 <code>kappa(x/ξ) = tanh(x/ξ)</code> という唯一の基本ブロックだけで、AND / OR / XOR や
                 比較演算、場合分けを「実数上の滑らかな式」として書き直すライブラリ。
                 ξ→0 で厳密な離散論理に、ξ&gt;0 で微分可能な緩和になります。
                 同じ tanh が熱核・フェルミ分布・キンクソリトン・双曲幾何・情報幾何に共通して現れることを、
-                手を動かして検証しながら積み上げました。
+                手を動かして検証しながら積み上げました。テストは110本。フェルミ・ディラック分布とは機械精度で、φ⁴ キンクソリトンのエネルギーとも照合しています。
               </p>
               <p class="slide__tags"><span>Python</span><span>PyTorch</span><span>数理物理</span><span>PyPI</span></p>
               <p class="slide__links">
@@ -364,13 +354,13 @@
               <p class="slide__metrics">
                 <b data-en="6 custom navigators">自作ナビ6種</b>
                 <b data-en="14 Mixins">Mixin 14枚</b>
-                <b data-en="Self-test included">自己診断つき</b>
+                <b data-en="Native component">ネイティブ実装つき</b>
               </p>
-              <p class="slide__d" data-en="Zombies share sighting information through a blackboard, flank you, climb walls, bring hounds, and raid your pantry — they even check how fresh the food is. Six custom navigators and fourteen Mixins replacing vanilla behaviour, with a self-test, a speed calibration pass and a test arena. My newest repository.">
+              <p class="slide__d" data-en="Zombies share sighting information through a blackboard, flank you, climb walls, bring hounds, and raid your pantry — they even check how fresh the food is. Pathfinding, target selection, stalking, breaching and population scaling. Six custom navigators and fourteen Mixins replacing vanilla behaviour, written in Java with a native component, plus a self-test, a speed calibration pass and a test arena.">
                 共有ブラックボードで索敵情報を配り、側面に回り込み、壁を登り、犬を連れ、
                 食料の鮮度まで見て貯蔵庫を狙う。ナビゲーションを6種類自前で書き、
                 Mixin 14枚でバニラの挙動を差し替えています。
-                自己診断・速度較正・テストアリーナ付き。いま一番新しいリポジトリ。
+                経路探索、標的選択、待ち伏せ、壁の突破、個体数のスケーリングまで。Java とネイティブコンポーネントで書いています。自己診断・速度較正・テストアリーナ付き。
               </p>
               <p class="slide__tags"><span>Java</span><span>Mixin</span><span>Pathfinding</span><span>Game AI</span></p>
               <p class="slide__links">
@@ -493,12 +483,13 @@
         <button class="slot" data-g="†" data-n="TypeScript" data-lv="C" data-d="統合版マイクラで触ったのが契機。React / Next.js でシフト表アプリを作りました。" data-d-en="Bedrock Minecraft scripting got me started. I built a shift-table app with React / Next.js."></button>
         <button class="slot" data-g="¶" data-n="GDScript" data-lv="B" data-d="ここ数年は Unity や UE5 より Godot にハマっています。四元数クラスを自前で書いたりも。" data-d-en="For the last few years I have preferred Godot over Unity or UE5. I have written my own quaternion class in it."></button>
         <button class="slot" data-g="∞" data-n="CUDA" data-lv="B" data-d="RTX 4060 の 8GB VRAM に載せるための NF4 4bit 量子化。『GLaDOS』や『SCP-079』がほしくなった。" data-d-en="NF4 4-bit quantization to fit an 8GB RTX 4060. It started because I wanted my own GLaDOS or SCP-079."></button>
-        <button class="slot" data-g="☆" data-n="Win32 / DX12" data-lv="B" data-d="ゲームの最前面にヒットテスト透過のウィンドウを重ね、Unity が作った D3D12 デバイスを横取りして同期させる。" data-d-en="Overlaying a hit-test-transparent window on top of a game, then stealing and syncing with the D3D12 device Unity created."></button>
+        <button class="slot" data-g="☆" data-n="DirectX 9–12" data-lv="A" data-d="Direct3D 9 から 12 までのシェーダー開発とデバッグ。ゲームの最前面にヒットテスト透過のウィンドウを重ね、Unity が作った D3D12 デバイスを横取りして同期させる、といったこともします。" data-d-en="Shader development and debugging across Direct3D 9 through 12. Also: overlaying a hit-test-transparent window on top of a game, then stealing and syncing with the D3D12 device Unity created."></button>
         <button class="slot" data-g="♪" data-n="Docker" data-lv="B" data-d="Dev Containers と併用して友人の PC 環境を再現。宿題のサポートや Toloka のスクレイピング案件でも。" data-d-en="With Dev Containers, to reproduce a friend's machine. Also used it for homework support and a Toloka scraping job."></button>
         <button class="slot" data-g="♭" data-n="Git / GitHub" data-lv="B" data-d="CS50 への課題提出を通じて基本的な流れを把握。普段はサーバーフォルダ単位の作業が多め。" data-d-en="Learned the basic flow through submitting CS50 assignments. Day to day I mostly work at the server-folder level."></button>
         <button class="slot" data-g="◇" data-n="OBS / 配信" data-n-en="OBS / Streaming" data-lv="B" data-d="サンプリング周波数・量子化ビット数・エンコードまわりの知識も。炎上や暴露に頼らず、ゲーム実況で20万再生を超えました。" data-d-en="Comfortable with sample rates, bit depth and encoding. Passed 200k views on game commentary without relying on drama or clickbait."></button>
         <button class="slot" data-g="±" data-n="数学・物理" data-n-en="Math / Physics" data-lv="B" data-d="ミシシッピ大学の下山ひろ准教授から、解析力学と微分位相幾何を教わっていました。古典力学から弦理論までのロードマップを自分で組んでいます。" data-d-en="I was taught analytical mechanics and differential topology by Associate Professor Hiro Shimoyama at the University of Mississippi. I keep my own roadmap from classical mechanics to string theory."></button>
         <button class="slot" data-g="‡" data-n="English" data-lv="B" data-d="高1で英検準一級。県代表の派遣学生としてモンタナ大学の ELI プログラムを修了。多国籍な環境で全編英語の議論を経験しました。" data-d-en="EIKEN Grade Pre-1 in my first year of high school. Completed the University of Montana ELI program as a prefectural delegate, debating entirely in English in a multinational group."></button>
+        <button class="slot" data-g="∴" data-n="PyTorch" data-lv="B" data-d="松尾・岩澤研の講座で、事前学習・スケーリング則・ファインチューニング・強化学習まで手を動かしています。kappalogic の PyTorch バックエンドもこれ。" data-d-en="Hands-on through the Matsuo-Iwasawa Lab course: pre-training, scaling laws, fine-tuning and reinforcement learning. Also the PyTorch backend of kappalogic."></button>
         <button class="slot" data-g="▽" data-n="Blender" data-lv="C" data-d="モデリングも一通り。HTML / CSS / JavaScript のフロントエンドもここに含めています。" data-d-en="General modelling. I also count HTML / CSS / JavaScript front-end work here."></button>
       </div>
 
@@ -533,8 +524,8 @@
         <tr><th>2023.03</th><td data-en="Graduated from Clark Memorial International High School, General Course">クラーク記念国際高等学校 普通科 卒業</td></tr>
         <tr><th>2023.04</th><td data-en="Entered Human Academy Fukuoka, Game Planner Course">総合学園ヒューマンアカデミー福岡校 ゲームプランナー専攻 入学</td></tr>
         <tr><th>2024.03</th><td data-en="Withdrew, to find somewhere I could go deeper">同校 中退 <small>／ より深く学べる環境を目指して</small></td></tr>
-        <tr class="is-now"><th>2026.04</th><td data-en="Entered The Open University of Japan — Faculty of Liberal Arts, Information Course (currently enrolled)">放送大学 教養学部 教養学科 情報コース 入学 <small>／ 在学中</small></td></tr>
-        <tr class="is-now"><th>2026</th><td data-en="Currently taking the LLM course run by the Matsuo Lab community at the University of Tokyo — [S3] Matsuo Lab LLM Community. Certificate pending.">東京大学 松尾研 LLM 講座 受講中 <small>／「[S3] 松尾研 LLM Community」所属。まもなく修了証</small></td></tr>
+        <tr class="is-now"><th>2026.04<br>—2030</th><td data-en="The Open University of Japan — Bachelor of Arts, Computer Science (expected 2030). A national distance-learning university; enrolled in the Information Course, studying computer science while working. Coursework covers computer graphics, programming, algorithms, computer architecture, networks, data science and quantum physics. Full marks in Computer Graphics and Quantum Physics.">放送大学 教養学部 教養学科 情報コース 入学 <small>／ 2030年卒業見込み。働きながら計算機科学を学んでいます。コンピュータグラフィックス、プログラミング、アルゴリズム、計算機アーキテクチャ、ネットワーク、データサイエンス、量子物理。<b>コンピュータグラフィックスと量子物理は満点</b></small></td></tr>
+        <tr class="is-now"><th>2026.09</th><td data-en="The University of Tokyo — Matsuo-Iwasawa Lab, course on large language models. A selective, application-based course run by one of Japan's leading AI research groups: weekly lectures with hands-on PyTorch exercises covering prompting and in-context learning, pre-training, scaling laws, fine-tuning, reinforcement learning, and the construction of training data and evaluation benchmarks, with a final project.">東京大学 松尾・岩澤研究室 大規模言語モデル講座 受講中 <small>／ 選考制。毎週の講義と PyTorch の演習で、プロンプティングと文脈内学習、事前学習、スケーリング則、ファインチューニング、強化学習、学習データと評価ベンチマークの構築まで。最終課題あり。まもなく修了</small></td></tr>
       </tbody></table>
     </div>
 
@@ -544,9 +535,8 @@
         <tr><th data-en="student years">学生期</th><td data-en="Christmas event sales staff (3 months)|/ then re-hired by the store manager as izakaya floor staff in Nakasu, Fukuoka">クリスマスイベント 販売スタッフ（3ヶ月）<br>／ 店長の誘いで、中洲の居酒屋スタッフとして再雇用</td></tr>
         <tr><th>2024.06<br>—2025.03</th><td data-en="Kyoritsu Maintenance Co., Ltd. — student dormitory staff, meal service support (part-time). Negotiated the role directly with the dorm manager. Left at the end of contract.">共立メンテナンス株式会社 学生寮スタッフ（寮食補助・パート）<small>／ 寮長に直接交渉して着任。契約期間満了により退職</small></td></tr>
         <tr><th data-en="2025.09—now">2025.09<br>—現在</th><td data-en="Bartender in Shimotori, Kumamoto (part-time)">熊本市下通にてバーテンダー（アルバイト）</td></tr>
-        <tr><th>2026</th><td data-en="METAL GARDEN — sole proprietorship. Contract development and online English tutoring. Under a business contract with asonova Inc. (an AEON Fantasy company). Separate business account, business plan approved.">個人事業「METAL GARDEN」開業 <small>／ 受託開発とオンライン英語講師。株式会社 asonova（イオンファンタジー傘下）と業務委託契約。事業用口座を分け、事業計画書も通っています</small></td></tr>
-        <tr><th>2026.03</th><td data-en="Received an offer from an AI automation company in Roppongi, Tokyo — declined it, and chose to go back to studying instead">六本木の AI 自動化企業より内定 <small>／ 辞退し、学び直すことを選びました</small></td></tr>
-      </tbody></table>
+        <tr><th>2026.03</th><td data-en="Received an offer from an AI &amp; automation consulting company in Roppongi, Tokyo — declined it, and chose to build deeper expertise first">六本木の AI&amp;自動化コンサル企業より内定 <small>／ 辞退し、より専門的な知識を身に付けることにしました</small></td></tr>
+        <tr class="is-now"><th>2026.07<br>—現在</th><td data-en="METAL GARDEN — Founder &amp; Developer. A registered sole proprietorship in Japan covering software development and English instruction, working under an independent contractor agreement with asonova Inc., a subsidiary of AEON Fantasy Co., Ltd. (listed on the Tokyo Stock Exchange).|Development: built a Minecraft Bedrock behaviour pack to client specification; designed and built a puzzle mini-game as a custom Minecraft world.|Instruction: around 30 hours of online English lessons per week, plus parent-facing communication, scheduling, and the lesson materials themselves.">個人事業「METAL GARDEN」代表 <small>／ 開業届提出済み。ソフトウェア開発と英語指導。株式会社 asonova（東証上場・イオンファンタジー傘下）と業務委託契約</small><br><small>開発：クライアント仕様の Minecraft 統合版ビヘイビアパックを制作／パズル系ミニゲームをカスタムワールドとして設計・実装</small><br><small>指導：オンライン英語レッスンを週30時間ほど。保護者対応・スケジュール調整・レッスン資料の作成まで担当</small></td></tr>      </tbody></table>
     </div>
 
     <div class="cv" data-rv data-rv-d="160">
@@ -709,17 +699,45 @@
       <span class="sec-jp" data-en="drawings, things I own, places I ride">描いたもの・持ちもの・行った場所</span>
       <span class="sec-rule"></span>
     </div>
-    <p class="sec-lead" data-rv data-en="On days off I draw, ride, or train BJJ — mostly toward MMA. Right now I want to build out my leg locks, the SAMBO side of the game. The CQC repository came out of the same interest.">
-      休みの日は、絵を描くか、バイクに乗るか、BJJ（主に MMA 寄り）の練習をしています。
-      いま鍛えたいのは足関節——サンボ側の技術です。リポジトリの「CQC」も同じ興味から生まれました。
-    </p>
 
     <div class="gallery" data-rv data-rv-d="60">
       <figure class="gal gal--w">
         <img src="assets/img/gallery/birthday-art.jpg" alt="ふたりの人物とハートを描いたイラスト">
         <figcaption>
-          <b data-en="Drawn for my partner's birthday">彼女の誕生日に描いた絵</b>
+          <b data-en="Drawn for our anniversary">彼女との記念日に描いた絵</b>
           <span data-en="We have been together for two years.">2年つきあっています。</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gal gal--w">
+        <img src="assets/img/gallery/birthday-2.jpg" alt="ふたりのデフォルメキャラを描いたイラスト「ALEX ♡ YUKA」">
+        <figcaption>
+          <b data-en="Drawn for my partner's birthday">彼女の誕生日に描いた絵</b>
+          <span data-en="The one on the left is me.">左が自分です。</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gal gal--w">
+        <img src="assets/img/gallery/character.jpg" alt="長い金髪に黒い上着のキャラクターを描いたイラスト">
+        <figcaption>
+          <b data-en="My original character">オリジナルキャラクター</b>
+          <span data-en="A blonde woman I keep coming back to. CLIP STUDIO PAINT.">よく描く金髪のお姉さん。CLIP STUDIO PAINT。</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gal gal--w">
+        <img src="assets/img/gallery/oc-gomafu.jpg" alt="棒付きキャンディをくわえた金髪の女性を描いたイラスト">
+        <figcaption>
+          <b>ごまふのあざらし</b>
+          <span data-en="From when I was posting on Pixiv. I had blonde hair myself back then.">Pixiv に上げていた絵。自分も金髪にしていた時期があります。</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gal gal--sm">
+        <img src="assets/img/gallery/iq500.png" alt="眼鏡と猫耳の女の子に IQ-500 と書かれた絵文字">
+        <figcaption>
+          <b>IQ-500</b>
+          <span data-en="An emoji I had added to a Discord server.">サーバーに追加してもらった絵文字。</span>
         </figcaption>
       </figure>
 
@@ -743,7 +761,7 @@
         <img src="assets/img/gallery/r25-2.jpg" alt="海辺に停めたバイクと、手前に写る手">
         <figcaption>
           <b data-en="Somewhere by the sea">海のちかくのどこか</b>
-          <span data-en="Kumamoto is a good place to ride.">熊本は、走るのにいい場所です。</span>
+          <span data-en="Good place to ride.">走るのにいい場所です。</span>
         </figcaption>
       </figure>
     </div>
@@ -769,11 +787,9 @@
     <div class="avail frame" data-rv>
       <h3 class="avail__h" data-en="AVAILABILITY">いまの稼働</h3>
       <dl class="avail__l">
-        <div><dt data-en="Start date">入社時期</dt><dd data-en="About one month, to hand over my current work. Sooner is better for me — I am actively looking, so please reach out early if you want to pull me in.">現業務の引き継ぎに1ヶ月ほど。早いほうがありがたいです。<br>就職は積極的にやりたいので、早めに引き抜いてくださる方、絶賛募集中です。</dd></div>
-        <div><dt data-en="Weekly">週の予定</dt><dd data-en="Mon / Wed / Fri 18:00–22:00 — MMA training (movable if needed)|Tue / Thu / Sat 17:00–21:00 — online English lessons|Everything else is fully available">月・水・金 18:00〜22:00 ｜ MMA の練習（必要なら動かせます）<br>火・木・土 17:00〜21:00 ｜ オンライン英語講師<br>それ以外はフルコミットできます</dd></div>
-        <div><dt data-en="Location">勤務地</dt><dd data-en="Based in Kumamoto (born and still living in Chuo-ku). Able to relocate — living together with my partner is a requirement.">熊本市中央区（出身かつ現住所）。引っ越しは可能です。<br><small>／ パートナーとの同居が条件になります</small></dd></div>
-        <div><dt data-en="Interested in">興味のある先</dt><dd data-en="Graphics, GPU / low-level runtimes, developer tooling, AI infrastructure. Internships at companies like NVIDIA, Anthropic or Valve are what I am aiming at.">グラフィックス、GPU・低レイヤ、開発者向けツール、AI 基盤。<br>NVIDIA・Anthropic・Valve のようなところのインターンを狙っています。</dd></div>
-        <div><dt data-en="Reply">返信</dt><dd data-en="Japanese or English, usually within a day.">日本語でも英語でも、だいたい一日以内に返します。</dd></div>
+        <div><dt data-en="Start date">入社時期</dt><dd data-en="Handing over my current work takes about a month, but sooner is better for me. If you want to pull me in, I am very much available.">現業務の引き継ぎに1ヶ月ほどかかりますが、早いほうがありがたいです。引き抜いてくださる方、絶賛募集中！</dd></div>
+        <div><dt data-en="Weekly">週の予定</dt><dd data-en="Mon / Wed / Fri 18:00–22:00 — MMA training (movable if needed)|Tue / Thu / Sat 17:00–21:00 — online English lessons">月・水・金 18:00〜22:00 ｜ MMA の練習（必要なら動かせます）<br>火・木・土 17:00〜21:00 ｜ オンライン英語講師</dd></div>
+        <div><dt data-en="Location">勤務地</dt><dd data-en="I would prefer fully remote, but I can relocate — on the condition that living together with my partner is acceptable.">フルリモートを希望しますが、引っ越しも可能です。ただし、パートナーとの同居が条件になります！</dd></div>
       </dl>
     </div>
 
@@ -781,9 +797,9 @@
       <div class="postcard__stamp" aria-hidden="true">
         <canvas class="thumb thumb--stamp" data-seed="7"></canvas>
       </div>
-      <p class="postcard__lead" data-en="Hiring, internships, joint projects, &quot;could you build this?&quot; —|anything is welcome.">
+      <p class="postcard__lead" data-en="Hiring, internships, joint projects, &quot;could you build this?&quot; —|anything is welcome. I usually reply within two days.">
         選考・インターン・共同開発・「これ作りませんか」——<br>
-        なんでもどうぞ。
+        なんでもどうぞ。だいたい二日以内に返信します。
       </p>
       <!-- ⟨EDIT⟩ RESUME のリンクだけ未設定です -->
       <div class="links">
@@ -807,15 +823,14 @@
   <div class="wrap foot__in">
     <p class="foot__c">(C) 2026 TAKERU TSUKAMOTO ALEXANDRU / METAL GARDEN</p>
     <p class="foot__f">
-      BGM: <b>Tangy</b> — Kyatto ／ TYPEFACE: PixelMplus (M+ FONTS PROJECT) ／
-      <span data-en="Background pixel art is generated in your browser">背景のドット絵はブラウザ内で生成しています</span>
-    </p>
+      BGM: <b>Tangy</b> — Kyatto ／ TYPEFACE: PixelMplus (M+ FONTS PROJECT)
+        </p>
     <button class="totop" id="toTop" data-tw="press">▲ TOP</button>
   </div>
 </footer>
 
-<script src="assets/js/tween.js?v=5"></script>
-<script src="assets/js/scene.js?v=5"></script>
-<script src="assets/js/main.js?v=5"></script>
+<script src="assets/js/tween.js?v=10"></script>
+<script src="assets/js/scene.js?v=10"></script>
+<script src="assets/js/main.js?v=10"></script>
 </body>
 </html>
